@@ -9,13 +9,13 @@
 </head>
 
 <body>
-<script>
 
+<script>
 if(localStorage.getItem("loggedIn")!="true"){
 window.location.href="login.html";
 }
-
 </script>
+
 <header>
 
 <div class="header-top">
@@ -49,6 +49,8 @@ window.location.href="login.html";
 
 <h1>Interner Bereich</h1>
 
+<button onclick="logout()" style="margin-bottom:20px;">Logout</button>
+
 <div class="card">
 <h3>Dienstplan</h3>
 <p>Übersicht über die kommenden Dienste und Übungen.</p>
@@ -65,7 +67,6 @@ window.location.href="login.html";
 </div>
 
 </div>
-
 
 <script src="scripts.js"></script>
 

@@ -6,6 +6,20 @@ body{
   color:#fff;
 }
 
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:10px;
+}
+
 /* Burger Menü */
 
 .beladung-grid{

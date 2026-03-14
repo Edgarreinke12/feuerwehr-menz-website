@@ -1,3 +1,24 @@
+/* -------------------- */
+/* GLOBAL */
+/* -------------------- */
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#111;
+color:#fff;
+line-height:1.5;
+}
+
+
+/* -------------------- */
+/* LIGHTBOX */
+/* -------------------- */
+
 #lightbox{
 position:fixed;
 top:0;
@@ -17,24 +38,16 @@ max-height:90%;
 border-radius:10px;
 }
 
-*{
-box-sizing:border-box;
-}
 
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#111;
-color:#fff;
-}
-
-
+/* -------------------- */
 /* HEADER */
+/* -------------------- */
 
 header{
 background:#c40000;
 color:white;
 padding:10px;
+position:relative;
 }
 
 .header-top{
@@ -43,19 +56,12 @@ justify-content:space-between;
 align-items:center;
 }
 
-.header-box{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
 
-
-/* BURGER */
+/* -------------------- */
+/* BURGER BUTTON */
+/* -------------------- */
 
 .burger{
-position:absolute;
-top:10px;
-right:15px;
 font-size:28px;
 background:none;
 border:none;
@@ -64,7 +70,9 @@ cursor:pointer;
 }
 
 
-/* SEITENMENÜ */
+/* -------------------- */
+/* SIDE MENU */
+/* -------------------- */
 
 #menu{
 position:fixed;
@@ -72,12 +80,20 @@ top:0;
 right:-280px;
 width:280px;
 height:100vh;
+
 background:#111;
+
 display:flex;
 flex-direction:column;
+
 transition:0.3s;
-z-index:1000;
+
+z-index:2000;
+
 box-shadow:-5px 0 15px rgba(0,0,0,0.5);
+
+overflow-y:auto;
+-webkit-overflow-scrolling:touch;
 }
 
 #menu.show{
@@ -90,6 +106,7 @@ color:white;
 text-decoration:none;
 border-bottom:1px solid #222;
 font-size:18px;
+transition:0.2s;
 }
 
 #menu a:hover{
@@ -97,7 +114,9 @@ background:#333;
 }
 
 
-/* HERO STARTSEITE */
+/* -------------------- */
+/* HERO */
+/* -------------------- */
 
 .hero{
 height:380px;
@@ -109,20 +128,26 @@ text-align:center;
 }
 
 .hero h2{
-background:rgba(0,0,0,.5);
+background:rgba(0,0,0,0.5);
 padding:12px 20px;
 border-radius:8px;
 }
 
 
+/* -------------------- */
 /* CONTAINER */
+/* -------------------- */
 
 .container{
 padding:25px;
+max-width:1200px;
+margin:auto;
 }
 
 
-/* KARTEN */
+/* -------------------- */
+/* CARDS */
+/* -------------------- */
 
 .cards{
 display:grid;
@@ -137,8 +162,8 @@ padding:20px;
 border-radius:10px;
 text-align:center;
 text-decoration:none;
-color:#fff;
-transition:.25s;
+color:white;
+transition:0.25s;
 }
 
 .card:hover{
@@ -146,7 +171,9 @@ transform:scale(1.05);
 }
 
 
+/* -------------------- */
 /* EINSÄTZE */
+/* -------------------- */
 
 .einsatzliste{
 display:flex;
@@ -157,13 +184,11 @@ max-width:900px;
 
 .einsatz{
 display:flex;
-flex-direction:row;
 gap:15px;
 background:#1e1e1e;
 padding:15px;
 border-radius:10px;
 margin-bottom:15px;
-width:100%;
 }
 
 .einsatz-bild{
@@ -194,7 +219,9 @@ border-left:8px solid #2dff6b;
 }
 
 
+/* -------------------- */
 /* FAHRZEUGE */
+/* -------------------- */
 
 .vehicle-grid{
 display:grid;
@@ -207,6 +234,11 @@ background:#1e1e1e;
 border-radius:10px;
 padding:15px;
 text-align:center;
+transition:0.2s;
+}
+
+.vehicle-card:hover{
+transform:scale(1.05);
 }
 
 .vehicle-card img{
@@ -217,7 +249,9 @@ border-radius:6px;
 }
 
 
-/* FAHRZEUG SEITE */
+/* -------------------- */
+/* FAHRZEUG DETAIL */
+/* -------------------- */
 
 .fahrzeug-bild{
 width:100%;
@@ -228,7 +262,9 @@ margin:20px auto;
 }
 
 
+/* -------------------- */
 /* BELADUNG */
+/* -------------------- */
 
 .beladung-grid{
 display:grid;
@@ -240,10 +276,13 @@ margin-top:15px;
 .beladung-grid img{
 width:100%;
 border-radius:8px;
+cursor:pointer;
 }
 
 
+/* -------------------- */
 /* GALERIE */
+/* -------------------- */
 
 .gallery{
 display:grid;
@@ -257,10 +296,13 @@ width:100%;
 height:220px;
 object-fit:cover;
 border-radius:10px;
+cursor:pointer;
 }
 
 
+/* -------------------- */
 /* STATISTIK */
+/* -------------------- */
 
 .stats{
 display:grid;
@@ -277,7 +319,9 @@ text-align:center;
 }
 
 
+/* -------------------- */
 /* WETTER */
+/* -------------------- */
 
 .wetter{
 display:grid;
@@ -305,7 +349,9 @@ margin-top:20px;
 }
 
 
+/* -------------------- */
 /* FOOTER */
+/* -------------------- */
 
 footer{
 background:#000;
@@ -315,7 +361,9 @@ margin-top:30px;
 }
 
 
-/* DARKMODE */
+/* -------------------- */
+/* DARK MODE */
+/* -------------------- */
 
 .dark{
 background:#eee;
@@ -330,9 +378,11 @@ color:#000;
 }
 
 
+/* -------------------- */
 /* MOBILE */
+/* -------------------- */
 
-@media(max-width:700px){
+@media(max-width:900px){
 
 .gallery{
 grid-template-columns:repeat(2,1fr);
@@ -340,6 +390,27 @@ grid-template-columns:repeat(2,1fr);
 
 .beladung-grid{
 grid-template-columns:repeat(2,1fr);
+}
+
+.einsatz{
+flex-direction:column;
+}
+
+.einsatz-bild{
+width:100%;
+height:180px;
+}
+
+}
+
+@media(max-width:500px){
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.cards{
+grid-template-columns:1fr;
 }
 
 }

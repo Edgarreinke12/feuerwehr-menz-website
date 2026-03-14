@@ -37,7 +37,10 @@
 <a href="termine.html">Termine</a>
 <a href="buergerinfo.html">Bürgerinfo</a>
 <a href="kontakt.html">Kontakt</a>
-<a href="intern.html">Intern</a>
+
+<!-- Intern nur sichtbar wenn eingeloggt -->
+<a href="intern.html" class="internLink">Intern</a>
+
 <a href="downloads.html">Downloads</a>
 
 </nav>
@@ -49,27 +52,57 @@
 
 <h2>🔐 Mitglieder Login</h2>
 
-<div class="card">
+<div class="card" style="max-width:400px;margin:auto;">
 
-<input 
-id="email" 
-type="text" 
+<label>Benutzername</label>
+
+<input
+id="email"
+type="text"
 placeholder="Benutzername"
-style="width:100%;padding:10px;margin-bottom:10px;"
+style="width:100%;padding:10px;margin-bottom:15px;"
 >
 
-<input 
-id="password" 
-type="password" 
+
+<label>Passwort</label>
+
+<input
+id="password"
+type="password"
 placeholder="Passwort"
-style="width:100%;padding:10px;margin-bottom:10px;"
+style="width:100%;padding:10px;margin-bottom:15px;"
 >
 
-<button onclick="login()" class="card" style="cursor:pointer;">
+
+<button onclick="login()" style="
+width:100%;
+padding:12px;
+background:#c40000;
+border:none;
+color:white;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+">
+
 Login
+
 </button>
 
-<p id="error" style="color:red;margin-top:10px;"></p>
+
+<p id="error" style="color:red;margin-top:15px;text-align:center;"></p>
+
+</div>
+
+
+<div class="card" style="margin-top:30px;text-align:center;">
+
+<p>
+
+Dieser Bereich ist nur für Mitglieder der  
+<strong>Freiwilligen Feuerwehr Menz</strong>.
+
+</p>
 
 </div>
 

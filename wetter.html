@@ -5,7 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wetterwarnungen</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -13,8 +15,11 @@
 <header>
 
 <div class="header-top">
+
 <h1>🚒 Feuerwehr Menz</h1>
+
 <button class="burger" onclick="toggleMenu()">☰</button>
+
 </div>
 
 <nav id="menu">
@@ -61,6 +66,7 @@ style="border:none;border-radius:10px;">
 <div id="waldbrandBox">
 
 <h2 id="stufe"></h2>
+
 <p id="beschreibung"></p>
 
 </div>
@@ -75,56 +81,8 @@ MLUK Brandenburg
 </div>
 
 
-<script>
-
-function ladeWaldbrand(){
-
-/* --------
-   HIER STUFE ÄNDERN
-   -------- */
-
-let stufe = 1;
-
-
-let beschreibung="";
-let farbe="";
-
-if(stufe==1){
-beschreibung="Sehr geringe Waldbrandgefahr.";
-farbe="#2ecc71";
-}
-
-if(stufe==2){
-beschreibung="Geringe Waldbrandgefahr.";
-farbe="#8bc34a";
-}
-
-if(stufe==3){
-beschreibung="Mittlere Waldbrandgefahr. Offenes Feuer vermeiden.";
-farbe="#f1c40f";
-}
-
-if(stufe==4){
-beschreibung="Hohe Waldbrandgefahr. Wälder möglichst meiden.";
-farbe="#e67e22";
-}
-
-if(stufe==5){
-beschreibung="Sehr hohe Waldbrandgefahr. Höchste Vorsicht.";
-farbe="#e74c3c";
-}
-
-document.getElementById("stufe").innerText="Stufe "+stufe;
-document.getElementById("beschreibung").innerText=beschreibung;
-document.getElementById("waldbrandBox").style.background=farbe;
-
-}
-
-window.onload=ladeWaldbrand;
-
-</script>
-
 <script src="scripts.js"></script>
 
 </body>
+
 </html>

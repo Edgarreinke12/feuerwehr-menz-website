@@ -2,10 +2,14 @@
 <html lang="de">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Interner Bereich</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -15,6 +19,7 @@ if(localStorage.getItem("loggedIn")!="true"){
 window.location.href="login.html";
 }
 </script>
+
 
 <header class="main-header">
 
@@ -31,58 +36,63 @@ window.location.href="login.html";
 <nav id="menu">
 
 <a href="index.html">Startseite</a>
-
 <a href="einsaetze.html">Einsätze</a>
-
 <a href="technik.html">Technik</a>
-
 <a href="aktuelles.html">Aktuelles</a>
-
 <a href="jugendfeuerwehr.html">Jugendfeuerwehr</a>
-
 <a href="einsatzarchiv.html">Einsatzarchiv</a>
-
 <a href="geschichte.html">Geschichte</a>
-
 <a href="wetter.html">Wetterwarnungen</a>
-
 <a href="galerie.html">Galerie</a>
-
 <a href="termine.html">Termine</a>
-
 <a href="buergerinfo.html">Bürgerinfo</a>
-
 <a href="kontakt.html">Kontakt</a>
-
 <a href="verein.html">Verein</a>
-
 <a href="intern.html" class="internLink">Intern</a>
-
 <a href="downloads.html">Downloads</a>
 
 </nav>
 
 </header>
 
+
 <div class="container">
 
 <h1>Interner Bereich</h1>
 
-<button onclick="logout()" style="margin-bottom:20px;">Logout</button>
+<button onclick="logout()" style="margin-bottom:20px;" class="back-button">
+Logout
+</button>
 
-<div class="card">
-<h3>Dienstplan</h3>
+
+<div class="cards">
+
+<a href="dienstplan.html" class="card">
+
+<h3>📅 Dienstplan</h3>
+
 <p>Übersicht über die kommenden Dienste und Übungen.</p>
-</div>
 
-<div class="card">
-<h3>Dokumente</h3>
+</a>
+
+
+<a href="dokumente.html" class="card">
+
+<h3>📂 Dokumente</h3>
+
 <p>Interne Dokumente für Mitglieder der Feuerwehr.</p>
-</div>
 
-<div class="card">
-<h3>Interne Termine</h3>
+</a>
+
+
+<a href="interne-termine.html" class="card">
+
+<h3>📆 Interne Termine</h3>
+
 <p>Besprechungen, Veranstaltungen und Lehrgänge.</p>
+
+</a>
+
 </div>
 
 </div>

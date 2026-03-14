@@ -13,11 +13,8 @@
 <header>
 
 <div class="header-top">
-
 <h1>🚒 Feuerwehr Menz</h1>
-
 <button class="burger" onclick="toggleMenu()">☰</button>
-
 </div>
 
 <nav id="menu">
@@ -61,6 +58,13 @@ style="border:none;border-radius:10px;">
 
 <h3>🔥 Waldbrandgefahrenstufe Landkreis Oberhavel</h3>
 
+<p>1</p>
+
+<input type="number" id="stufeInput" min="1" max="5" value="1">
+
+<button onclick="updateStufe()">Aktualisieren</button>
+
+
 <div id="waldbrandBox">
 
 <h2 id="stufe"></h2>
@@ -70,7 +74,7 @@ style="border:none;border-radius:10px;">
 </div>
 
 <p>
-Quelle Waldbrandstufe:
+Quelle:
 <a href="https://mleuv.brandenburg.de/mleuv/de/umwelt/forst/waldschutz/waldbrandgefahr-in-brandenburg/waldbrandgefahrenstufen/" target="_blank">
 MLUK Brandenburg
 </a>
@@ -81,12 +85,12 @@ MLUK Brandenburg
 
 <script>
 
-function ladeWaldbrand(){
+function updateStufe(){
 
-let stufe = 1;
+let stufe = document.getElementById("stufeInput").value;
 
-let beschreibung = "";
-let farbe = "";
+let beschreibung="";
+let farbe="";
 
 if(stufe==1){
 beschreibung="Sehr geringe Waldbrandgefahr.";
@@ -119,7 +123,7 @@ document.getElementById("waldbrandBox").style.background=farbe;
 
 }
 
-window.onload=ladeWaldbrand;
+updateStufe();
 
 </script>
 

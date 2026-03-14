@@ -1,33 +1,62 @@
+// --------------------
 // BURGER MENÜ
+// --------------------
 
 function toggleMenu(){
-let menu=document.getElementById("menu");
+let menu = document.getElementById("menu");
+if(menu){
 menu.classList.toggle("show");
 }
+}
+
+// Menü schließen wenn außerhalb geklickt wird
+document.addEventListener("click", function(event){
+
+let menu = document.getElementById("menu");
+let burger = document.querySelector(".burger");
+
+if(menu && burger){
+
+if(!menu.contains(event.target) && !burger.contains(event.target)){
+menu.classList.remove("show");
+}
+
+}
+
+});
 
 
+// --------------------
 // DARK MODE
+// --------------------
 
 function toggleDark(){
 document.body.classList.toggle("dark");
 }
 
 
+// --------------------
 // EINSATZ SUCHE
+// --------------------
 
 function searchEinsatz(){
 
-let input=document.getElementById("search").value.toLowerCase();
-let einsaetze=document.querySelectorAll(".einsatz");
+let input = document.getElementById("search");
+
+if(!input) return;
+
+let text = input.value.toLowerCase();
+
+let einsaetze = document.querySelectorAll(".einsatz");
 
 einsaetze.forEach(function(e){
 
-let text=e.innerText.toLowerCase();
+let content = e.innerText.toLowerCase();
 
-if(text.includes(input)){
-e.style.display="flex";
+if(content.includes(text)){
+e.style.display = "flex";
 }else{
-e.style.display="none";
+e.style.display = "none";
 }
 
 });
@@ -35,38 +64,38 @@ e.style.display="none";
 }
 
 
+// --------------------
 // BESUCHERZÄHLER
+// --------------------
 
-let visits=localStorage.getItem("visits") || 0;
+let visits = localStorage.getItem("visits") || 0;
 
 visits++;
 
-localStorage.setItem("visits",visits);
-
-console.log("Besucher:",visits);
+localStorage.setItem("visits", visits);
 
 
-// COUNTDOWN FÜR VERANSTALTUNG
+// --------------------
+// COUNTDOWN
+// --------------------
 
-let eventDate=new Date("April 20, 2026 18:00:00");
+let eventDate = new Date("April 20, 2026 18:00:00");
 
 function countdown(){
 
-let now=new Date();
+let el = document.getElementById("countdown");
 
-let diff=eventDate-now;
+if(!el) return;
 
-if(diff>0){
+let now = new Date();
 
-let days=Math.floor(diff/(1000*60*60*24));
+let diff = eventDate - now;
 
-let el=document.getElementById("countdown");
+if(diff > 0){
 
-if(el){
+let days = Math.floor(diff/(1000*60*60*24));
 
-el.innerText=days+" Tage";
-
-}
+el.innerText = days + " Tage";
 
 }
 
@@ -75,112 +104,95 @@ el.innerText=days+" Tage";
 setInterval(countdown,1000);
 
 
-
-
-// EINSATZ SPEICHERN (ADMIN)
+// --------------------
+// EINSATZ SPEICHERN
+// --------------------
 
 function addEinsatz(){
 
-let datum=document.getElementById("datum").value;
-let art=document.getElementById("art").value;
-let titel=document.getElementById("titel").value;
-let beschreibung=document.getElementById("beschreibung").value;
+let datum = document.getElementById("datum");
+let art = document.getElementById("art");
+let titel = document.getElementById("titel");
+let beschreibung = document.getElementById("beschreibung");
 
-let einsatz={
-datum,
-art,
-titel,
-beschreibung
+if(!datum || !art || !titel || !beschreibung) return;
+
+let einsatz = {
+datum: datum.value,
+art: art.value,
+titel: titel.value,
+beschreibung: beschreibung.value
 };
 
-let einsaetze=JSON.parse(localStorage.getItem("einsaetze")) || [];
+let einsaetze = JSON.parse(localStorage.getItem("einsaetze")) || [];
 
 einsaetze.push(einsatz);
 
-localStorage.setItem("einsaetze",JSON.stringify(einsaetze));
+localStorage.setItem("einsaetze", JSON.stringify(einsaetze));
 
 alert("Einsatz gespeichert");
 
 }
 
 
+// --------------------
+// WALDBRANDSTUFE
+// --------------------
 
+let stufe = 3;
 
-// WALDBRANDSTUFE (MANUELL ÄNDERN)
+let beschreibung = "";
+let farbe = "";
 
-let stufe=3;
+if(stufe==1){beschreibung="Sehr geringe Gefahr";farbe="green";}
+if(stufe==2){beschreibung="Geringe Gefahr";farbe="green";}
+if(stufe==3){beschreibung="Mittlere Gefahr";farbe="orange";}
+if(stufe==4){beschreibung="Hohe Gefahr";farbe="red";}
+if(stufe==5){beschreibung="Sehr hohe Gefahr";farbe="darkred";}
 
-let text="";
-let farbe="";
-
-if(stufe==1){
-text="Sehr geringe Gefahr";
-farbe="green";
-}
-
-if(stufe==2){
-text="Geringe Gefahr";
-farbe="green";
-}
-
-if(stufe==3){
-text="Mittlere Gefahr";
-farbe="orange";
-}
-
-if(stufe==4){
-text="Hohe Gefahr";
-farbe="red";
-}
-
-if(stufe==5){
-text="Sehr hohe Gefahr";
-farbe="darkred";
-}
-
-let stufeText=document.getElementById("stufeText");
-let stufeBeschreibung=document.getElementById("stufeBeschreibung");
-let waldbrandBox=document.getElementById("waldbrandBox");
+let stufeText = document.getElementById("stufeText");
+let stufeBeschreibung = document.getElementById("stufeBeschreibung");
+let waldbrandBox = document.getElementById("waldbrandBox");
 
 if(stufeText && stufeBeschreibung && waldbrandBox){
 
-stufeText.innerText="Stufe "+stufe;
-stufeBeschreibung.innerText=text;
-waldbrandBox.style.background=farbe;
+stufeText.innerText = "Stufe " + stufe;
+stufeBeschreibung.innerText = beschreibung;
+waldbrandBox.style.background = farbe;
 
 }
 
 
+// --------------------
+// WETTERDATEN (Beispiel)
+// --------------------
 
-
-// WETTERDATEN (BEISPIEL)
-
-let temp=document.getElementById("temp");
-let wind=document.getElementById("wind");
-let regen=document.getElementById("regen");
+let temp = document.getElementById("temp");
+let wind = document.getElementById("wind");
+let regen = document.getElementById("regen");
 
 if(temp && wind && regen){
 
-temp.innerText="18 °C";
-wind.innerText="12 km/h";
-regen.innerText="0 mm";
+temp.innerText = "18 °C";
+wind.innerText = "12 km/h";
+regen.innerText = "0 mm";
 
 }
 
 
-
-
+// --------------------
 // GALERIE VOLLBILD
+// --------------------
 
 function openImage(img){
 
-let lightbox=document.getElementById("lightbox");
-let lightboxImg=document.getElementById("lightbox-img");
+let lightbox = document.getElementById("lightbox");
+let lightboxImg = document.getElementById("lightbox-img");
 
 if(lightbox && lightboxImg){
 
-lightbox.style.display="flex";
-lightboxImg.src=img.src;
+lightbox.style.display = "flex";
+lightboxImg.src = img.src;
 
 }
 
@@ -188,42 +200,53 @@ lightboxImg.src=img.src;
 
 function closeImage(){
 
-let lightbox=document.getElementById("lightbox");
+let lightbox = document.getElementById("lightbox");
 
 if(lightbox){
-
-lightbox.style.display="none";
-
+lightbox.style.display = "none";
 }
 
 }
+
+
+// --------------------
+// LOGIN SYSTEM
+// --------------------
 
 function login(){
 
-let email=document.getElementById("email").value;
-let password=document.getElementById("password").value;
+let email = document.getElementById("email").value;
+let password = document.getElementById("password").value;
 
-let correctEmail="mitglied@feuerwehr-menz.de";
-let correctPassword="feuerwehr123";
+let correctEmail = "mitglied@feuerwehr-menz.de";
+let correctPassword = "feuerwehr123";
 
-if(email===correctEmail && password===correctPassword){
+if(email === correctEmail && password === correctPassword){
 
 localStorage.setItem("loggedIn","true");
 
-window.location.href="intern.html";
+window.location.href = "intern.html";
 
 }else{
 
-document.getElementById("error").innerText="Login falsch";
+let error = document.getElementById("error");
+if(error){
+error.innerText = "Login falsch";
+}
 
 }
+
+}
+
+
+// --------------------
+// LOGOUT
+// --------------------
+
 function logout(){
 
 localStorage.removeItem("loggedIn");
 
-window.location.href="index.html";
+window.location.href = "index.html";
 
 }
-}
-
-

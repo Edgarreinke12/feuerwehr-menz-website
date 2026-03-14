@@ -58,17 +58,9 @@ style="border:none;border-radius:10px;">
 
 <h3>🔥 Waldbrandgefahrenstufe Landkreis Oberhavel</h3>
 
-<p>1</p>
-
-<input type="number" id="stufeInput" min="1" max="5" value="1">
-
-<button onclick="updateStufe()">Aktualisieren</button>
-
-
 <div id="waldbrandBox">
 
 <h2 id="stufe"></h2>
-
 <p id="beschreibung"></p>
 
 </div>
@@ -85,9 +77,14 @@ MLUK Brandenburg
 
 <script>
 
-function updateStufe(){
+function ladeWaldbrand(){
 
-let stufe = document.getElementById("stufeInput").value;
+/* --------
+   HIER STUFE ÄNDERN
+   -------- */
+
+let stufe = 1;
+
 
 let beschreibung="";
 let farbe="";
@@ -123,7 +120,7 @@ document.getElementById("waldbrandBox").style.background=farbe;
 
 }
 
-updateStufe();
+window.onload=ladeWaldbrand;
 
 </script>
 

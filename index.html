@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Freiwillige Feuerwehr Menz</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
 
 <div class="header-top">
-
 <h1>🚒 Feuerwehr Menz</h1>
-
 <button class="burger" onclick="toggleMenu()">☰</button>
-
 </div>
 
 <nav id="menu">
@@ -39,19 +38,23 @@
 
 </header>
 
+
 <div class="hero">
 <h2>365 Tage im Jahr für eure Sicherheit</h2>
 </div>
 
+
 <div class="container">
 
 <h2>Einsatzstatistik</h2>
+
 <div class="stats">
 <div><h3>1</h3>Brände</div>
 <div><h3>3</h3>Hilfeleistungen</div>
 <div><h3>0</h3>Sonstiges</div>
 <div><h3>4</h3>Gesamt</div>
 </div>
+
 
 <h2>Infos</h2>
 
@@ -63,12 +66,24 @@
 
 </div>
 
+
 <footer>
-<a href="https://www.instagram.com/freiwillige_feuerwehr_menz/" target="_blank">Instagram</a> | <a href="https://facebook.com/freiwilligefeuerwehrmenzstechlin" target="_blank">Facebook</a>
-<p>Besucher: <script>document.write(localStorage.getItem("visits"))</script></p>
+
+<p>
+<a href="https://www.instagram.com/freiwillige_feuerwehr_menz/" target="_blank">Instagram</a> |
+<a href="https://facebook.com/freiwilligefeuerwehrmenzstechlin" target="_blank">Facebook</a>
+</p>
+
+<p>Besucher: <span id="besucher"></span></p>
+
 </footer>
 
-</body>
-<script src="scripts.js"></script>
-</html>
 
+<script src="scripts.js"></script>
+
+<script>
+document.getElementById("besucher").innerText = localStorage.getItem("visits") || 0;
+</script>
+
+</body>
+</html>

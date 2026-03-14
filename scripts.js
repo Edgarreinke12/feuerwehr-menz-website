@@ -217,5 +217,13 @@ window.location.href="intern.html";
 document.getElementById("error").innerText="Login falsch";
 
 }
+function logout(){
+
+localStorage.removeItem("loggedIn");
+
+window.location.href="index.html";
 
 }
+}
+
+

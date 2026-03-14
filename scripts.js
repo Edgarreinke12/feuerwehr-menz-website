@@ -43,13 +43,17 @@ let users = {
 
 };
 
-
 function login(){
 
-let user = document.getElementById("email").value.trim().toLowerCase();
-let password = document.getElementById("password").value.trim();
+let userInput = document.getElementById("email");
+let passwordInput = document.getElementById("password");
 
-if(users[user] === password){
+if(!userInput || !passwordInput) return;
+
+let user = userInput.value.trim().toLowerCase();
+let password = passwordInput.value.trim();
+
+if(users[user] && users[user] === password){
 
 localStorage.setItem("loggedIn","true");
 localStorage.setItem("user",user);
@@ -162,25 +166,25 @@ e.style.display="none";
 
 }
 
+
 // --------------------
-// BESUCHERZÄHLER (nur einmal pro Gerät)
+// BESUCHERZÄHLER
+// (nur einmal pro Gerät)
 // --------------------
 
-let visits = localStorage.getItem("visits");
-
-if(!visits){
-visits = 0;
-}
+let visits = Number(localStorage.getItem("visits")) || 0;
 
 let counted = localStorage.getItem("visitorCounted");
 
 if(!counted){
 
 visits++;
+
 localStorage.setItem("visits", visits);
-localStorage.setItem("visitorCounted", "true");
+localStorage.setItem("visitorCounted","true");
 
 }
+
 
 // --------------------
 // COUNTDOWN
@@ -195,7 +199,6 @@ let el = document.getElementById("countdown");
 if(!el) return;
 
 let now = new Date();
-
 let diff = eventDate - now;
 
 if(diff > 0){
@@ -208,7 +211,7 @@ el.innerText = days + " Tage";
 
 }
 
-setInterval(countdown,1000);
+setInterval(countdown,60000);
 
 
 // --------------------

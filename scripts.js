@@ -12,7 +12,7 @@ menu.classList.toggle("show");
 
 }
 
-// Menü schließen bei Klick außerhalb
+// Menü schließen wenn außerhalb geklickt wird
 
 document.addEventListener("click", function(event){
 
@@ -42,6 +42,7 @@ let users = {
 "steven":"feuerwehr4"
 
 };
+
 
 function login(){
 
@@ -130,6 +131,39 @@ box.innerText="👨‍🚒 Angemeldet: "+user;
 
 
 // --------------------
+// GLOBALER BESUCHERZÄHLER
+// --------------------
+
+async function ladeBesucher(){
+
+try{
+
+let res = await fetch("https://api.countapi.xyz/hit/feuerwehr-menz/website");
+
+let data = await res.json();
+
+let box = document.getElementById("besucher");
+
+if(box){
+box.innerText = data.value;
+}
+
+}catch(e){
+
+let box = document.getElementById("besucher");
+
+if(box){
+box.innerText="0";
+}
+
+}
+
+}
+
+window.addEventListener("load", ladeBesucher);
+
+
+// --------------------
 // DARK MODE
 // --------------------
 
@@ -163,25 +197,6 @@ e.style.display="none";
 }
 
 });
-
-}
-
-
-// --------------------
-// BESUCHERZÄHLER
-// (nur einmal pro Gerät)
-// --------------------
-
-let visits = Number(localStorage.getItem("visits")) || 0;
-
-let counted = localStorage.getItem("visitorCounted");
-
-if(!counted){
-
-visits++;
-
-localStorage.setItem("visits", visits);
-localStorage.setItem("visitorCounted","true");
 
 }
 

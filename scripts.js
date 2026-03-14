@@ -58,8 +58,10 @@ window.location.href="intern.html";
 
 }else{
 
-document.getElementById("error").innerText="Benutzername oder Passwort falsch";
+let error = document.getElementById("error");
 
+if(error){
+error.innerText="Benutzername oder Passwort falsch";
 }
 
 }

@@ -31,37 +31,35 @@ menu.classList.remove("show");
 
 
 // --------------------
-// LOGIN SYSTEM (MEHRERE BENUTZER)
+// LOGIN SYSTEM
 // --------------------
 
 let users = {
 
-"edgar": "feuerwehr1",
-"frank": "feuerwehr2",
-"rene": "feuerwehr3",
-"steven": "feuerwehr4"
+"edgar":"feuerwehr1",
+"frank":"feuerwehr2",
+"rene":"feuerwehr3",
+"steven":"feuerwehr4"
 
 };
 
 
 function login(){
 
-let user = document.getElementById("email").value.toLowerCase();
-let password = document.getElementById("password").value;
+let user = document.getElementById("email").value.trim().toLowerCase();
+let password = document.getElementById("password").value.trim();
 
-if(users[user] && users[user] === password){
+if(users[user] === password){
 
 localStorage.setItem("loggedIn","true");
 localStorage.setItem("user",user);
 
-window.location.href = "intern.html";
+window.location.href="intern.html";
 
 }else{
 
-let error = document.getElementById("error");
+document.getElementById("error").innerText="Benutzername oder Passwort falsch";
 
-if(error){
-error.innerText="Login falsch";
 }
 
 }

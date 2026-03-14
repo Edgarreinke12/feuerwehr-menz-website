@@ -13,8 +13,11 @@
 <header>
 
 <div class="header-top">
+
 <h1>🚒 Feuerwehr Menz</h1>
+
 <button class="burger" onclick="toggleMenu()">☰</button>
+
 </div>
 
 <nav id="menu">
@@ -41,28 +44,22 @@
 
 <div class="container">
 
-<h1>⚠ Wetterwarnungen & Waldbrandgefahr</h1>
+<h2>⚠ Wetterwarnungen & Waldbrandgefahr</h2>
 
 
-<h2>⚠ Aktuelle Wetterwarnungen (DWD)</h2>
-
-<div class="card">
+<h3>⚠ Aktuelle Warnungen Landkreis Oberhavel</h3>
 
 <iframe
-src="https://www.dwd.de/DWD/warnungen/warnapp/warnings.html"
+src="https://warnung.bund.de/meldungen/landkreis/12065"
 width="100%"
 height="500"
 style="border:none;border-radius:10px;">
 </iframe>
 
-<p style="font-size:12px;margin-top:10px;">
-Quelle: Deutscher Wetterdienst (DWD)
-</p>
-
-</div>
+<p>Quelle: Deutscher Wetterdienst (DWD)</p>
 
 
-<h2>🔥 Waldbrandgefahrenstufe Landkreis Oberhavel</h2>
+<h3>🔥 Waldbrandgefahrenstufe Landkreis Oberhavel</h3>
 
 <div id="waldbrandBox">
 
@@ -72,8 +69,8 @@ Quelle: Deutscher Wetterdienst (DWD)
 
 </div>
 
-<p style="font-size:13px;">
-Quelle:
+<p>
+Quelle Waldbrandstufe:
 <a href="https://mleuv.brandenburg.de/mleuv/de/umwelt/forst/waldschutz/waldbrandgefahr-in-brandenburg/waldbrandgefahrenstufen/" target="_blank">
 MLUK Brandenburg
 </a>
@@ -86,10 +83,10 @@ MLUK Brandenburg
 
 function ladeWaldbrand(){
 
-let stufe = 1;  // hier Waldbrandstufe ändern
+let stufe = 1;
 
-let beschreibung="";
-let farbe="";
+let beschreibung = "";
+let farbe = "";
 
 if(stufe==1){
 beschreibung="Sehr geringe Waldbrandgefahr.";

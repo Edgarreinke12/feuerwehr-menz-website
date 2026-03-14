@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>Bürgerinfo</title>
+<title>Kontakt</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -10,15 +10,11 @@
 <header>
 
 <div class="header-top">
-
 <h1>🚒 Feuerwehr Menz</h1>
-
 <button class="burger" onclick="toggleMenu()">☰</button>
-
 </div>
 
 <nav id="menu">
-
 <a href="index.html">Startseite</a>
 <a href="einsaetze.html">Einsätze</a>
 <a href="technik.html">Technik</a>
@@ -33,23 +29,24 @@
 <a href="kontakt.html">Kontakt</a>
 <a href="intern.html">Intern</a>
 <a href="downloads.html">Downloads</a>
-
 </nav>
 
 </header>
+
+<div class="container">
 
 <h1>Kontakt</h1>
 
 <form action="mailto:Edgarreinke1@web.de" method="post" enctype="text/plain">
 
 <label>Name</label><br>
-<input type="text" name="Name"><br><br>
+<input type="text" name="Name" required><br><br>
 
 <label>Email</label><br>
-<input type="email" name="Email"><br><br>
+<input type="email" name="Email" required><br><br>
 
 <label>Nachricht</label><br>
-<textarea name="Nachricht"></textarea><br><br>
+<textarea name="Nachricht" rows="5" required></textarea><br><br>
 
 <button type="submit">Nachricht senden</button>
 
@@ -60,14 +57,14 @@
 <iframe
 src="https://maps.google.com/maps?q=Berliner%20Str%204%2C%2016775%20Stechlin&t=&z=15&ie=UTF8&iwloc=&output=embed"
 width="100%"
-height="300"
+height="350"
 style="border:0;border-radius:10px;"
 loading="lazy">
 </iframe>
 
 </div>
 
+<script src="scripts.js"></script>
 
 </body>
-<script src="scripts.js"></script>
 </html>

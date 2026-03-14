@@ -12,6 +12,39 @@ menu.classList.toggle("show");
 
 }
 
+// --------------------
+// LOGIN SYSTEM MEHRERE BENUTZER
+// --------------------
+
+let users = {
+
+"edgar": "feuerwehr1",
+"frank": "feuerwehr2",
+"rene": "feuerwehr3",
+"steven": "feuerwehr4"
+
+};
+
+
+function login(){
+
+let user = document.getElementById("email").value.toLowerCase();
+let password = document.getElementById("password").value;
+
+if(users[user] && users[user] === password){
+
+localStorage.setItem("loggedIn","true");
+localStorage.setItem("user",user);
+
+window.location.href = "intern.html";
+
+}else{
+
+document.getElementById("error").innerText="Login falsch";
+
+}
+
+}
 
 // Menü schließen wenn außerhalb geklickt wird
 

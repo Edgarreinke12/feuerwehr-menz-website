@@ -1,89 +1,88 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-
 <meta charset="UTF-8">
-<title>Einsätze - Feuerwehr Menz</title>
-
+<title>Einsätze</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
 
 <header>
-<h1>Einsätze</h1>
-</header>
 
-<nav>
+<div class="header-top">
+
+<h1>🚒 Feuerwehr Menz</h1>
+
+<button class="burger" onclick="toggleMenu()">☰</button>
+
+</div>
+
+<nav id="menu">
+
 <a href="index.html">Startseite</a>
 <a href="einsaetze.html">Einsätze</a>
 <a href="technik.html">Technik</a>
-<a href="verein.html">Verein</a>
 <a href="aktuelles.html">Aktuelles</a>
-<a href="termine.html">Termine</a>
 <a href="jugendfeuerwehr.html">Jugendfeuerwehr</a>
+<a href="einsatzarchiv.html">Einsatzarchiv</a>
+<a href="geschichte.html">Geschichte</a>
+<a href="wetter.html">Wetterwarnungen</a>
+<a href="galerie.html">Galerie</a>
+<a href="termine.html">Termine</a>
+<a href="buergerinfo.html">Bürgerinfo</a>
 <a href="kontakt.html">Kontakt</a>
+<a href="intern.html">Intern</a>
+<a href="downloads.html">Downloads</a>
+
 </nav>
+
+</header>
 
 <div class="container">
 
-<h1>🚒 Einsätze 2026</h1>
+<input type="text" id="search" placeholder="Einsatz suchen..." onkeyup="searchEinsatz()">
 
-<div class="card einsatz">
+<div class="einsatz hilfe">
+<img src="bilder/einsaetze/H Natur.jpg" class="einsatz-bild">
 
-<img src="bilder/H Natur.jpg" class="einsatzbild-klein">
-
-<div>
+<div class="einsatz-text">
 <h3>22.02.2026 – H: Natur</h3>
-<p><b>Einsatz:</b> Wasser auf Straße</p>
-<p>Einsatzstelle abgesichert und Wasser von der Straße mittels Tauchpumpe abgepumpt.</p>
+<p>Wasser auf Straße</p>
+<p>Einsatzstelle abgesichert und Wasser von Straße mittels Tauchpumpe abgepumpt</p>
+</div>
 </div>
 
-</div>
 
+<div class="einsatz brand">
+<img src="bilder/einsaetze/b schornstein.jpg" class="einsatz-bild">
 
-<div class="card einsatz">
-
-<img src="bilder/B Schornstein.jpg" class="einsatzbild-klein">
-
-<div>
+<div class="einsatz-text">
 <h3>18.02.2026 – B: Schornstein</h3>
-<p><b>Einsatz:</b> Schornsteinbrand</p>
-<p>Reinigung des Schornsteins mittels Kehrmaterial und DLK.</p>
+<p>Schornsteinbrand</p>
+</div>
 </div>
 
-</div>
 
+<div class="einsatz hilfe">
+<img src="bilder/einsaetze/h klein.jpg" class="einsatz-bild">
 
-<div class="card einsatz">
-
-<img src="bilder/H Klein.jpg" class="einsatzbild-klein">
-
-<div>
+<div class="einsatz-text">
 <h3>13.02.2026 – H: Klein</h3>
-<p><b>Einsatz:</b> Keller unter Wasser</p>
-<p>Wasser mittels Tauchpumpe aus dem Keller gepumpt.</p>
+<p>Keller unter Wasser</p>
+</div>
 </div>
 
-</div>
 
+<div class="einsatz hilfe">
+<img src="bilder/einsaetze/h tuernotoeffnung.jpg" class="einsatz-bild">
 
-<div class="card einsatz">
-
-<img src="bilder/H tuernotoeffnung.jpg" class="einsatzbild-klein">
-
-<div>
+<div class="einsatz-text">
 <h3>02.02.2026 – H: Türnotöffnung</h3>
-<p><b>Einsatz:</b> Türnotöffnung</p>
-<p>Öffnung der Tür für den Rettungsdienst.</p>
+<p>Tür für Rettungsdienst geöffnet</p>
 </div>
-
-</div>
-
 </div>
 
 
 </body>
+<script src="scripts.js"></script>
 </html>
-

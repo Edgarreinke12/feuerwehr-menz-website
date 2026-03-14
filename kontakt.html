@@ -1,46 +1,71 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-
 <meta charset="UTF-8">
-<title>Kontakt - Feuerwehr Menz</title>
-
+<title>Bürgerinfo</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
 
 <header>
-<h1>📞 Kontakt</h1>
-</header>
 
-<nav>
+<div class="header-top">
+
+<h1>🚒 Feuerwehr Menz</h1>
+
+<button class="burger" onclick="toggleMenu()">☰</button>
+
+</div>
+
+<nav id="menu">
+
 <a href="index.html">Startseite</a>
 <a href="einsaetze.html">Einsätze</a>
 <a href="technik.html">Technik</a>
-<a href="verein.html">Verein</a>
 <a href="aktuelles.html">Aktuelles</a>
-<a href="termine.html">Termine</a>
 <a href="jugendfeuerwehr.html">Jugendfeuerwehr</a>
+<a href="einsatzarchiv.html">Einsatzarchiv</a>
+<a href="geschichte.html">Geschichte</a>
+<a href="wetter.html">Wetterwarnungen</a>
+<a href="galerie.html">Galerie</a>
+<a href="termine.html">Termine</a>
+<a href="buergerinfo.html">Bürgerinfo</a>
 <a href="kontakt.html">Kontakt</a>
+<a href="intern.html">Intern</a>
+<a href="downloads.html">Downloads</a>
+
 </nav>
 
-<div class="container">
+</header>
 
-<div class="card">
-<h2>Adresse</h2>
-<p>Freiwillige Feuerwehr Menz</p>
-<p>Menz, Deutschland</p>
+<h1>Kontakt</h1>
+
+<form action="mailto:Edgarreinke1@web.de" method="post" enctype="text/plain">
+
+<label>Name</label><br>
+<input type="text" name="Name"><br><br>
+
+<label>Email</label><br>
+<input type="email" name="Email"><br><br>
+
+<label>Nachricht</label><br>
+<textarea name="Nachricht"></textarea><br><br>
+
+<button type="submit">Nachricht senden</button>
+
+</form>
+
+<h2>Standort</h2>
+
+<iframe
+src="https://www.google.com/maps?q=Menz&output=embed"
+width="100%"
+height="300">
+</iframe>
+
 </div>
 
-<div class="card">
-<h2>E-Mail</h2>
-<p>info@feuerwehr-menz.de</p>
-</div>
-
-</div>
 
 </body>
+<script src="scripts.js"></script>
 </html>
-

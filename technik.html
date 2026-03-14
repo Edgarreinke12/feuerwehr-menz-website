@@ -1,89 +1,80 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-
 <meta charset="UTF-8">
-<title>Technik - Feuerwehr Menz</title>
-
+<title>Technik</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
 
 <header>
-<h1>🚒 Technik</h1>
-</header>
 
-<nav>
+<div class="header-top">
+
+<h1>🚒 Feuerwehr Menz</h1>
+
+<button class="burger" onclick="toggleMenu()">☰</button>
+
+</div>
+
+<nav id="menu">
+
 <a href="index.html">Startseite</a>
 <a href="einsaetze.html">Einsätze</a>
 <a href="technik.html">Technik</a>
-<a href="verein.html">Verein</a>
 <a href="aktuelles.html">Aktuelles</a>
-<a href="termine.html">Termine</a>
 <a href="jugendfeuerwehr.html">Jugendfeuerwehr</a>
+<a href="einsatzarchiv.html">Einsatzarchiv</a>
+<a href="geschichte.html">Geschichte</a>
+<a href="wetter.html">Wetterwarnungen</a>
+<a href="galerie.html">Galerie</a>
+<a href="termine.html">Termine</a>
+<a href="buergerinfo.html">Bürgerinfo</a>
 <a href="kontakt.html">Kontakt</a>
+<a href="intern.html">Intern</a>
+<a href="downloads.html">Downloads</a>
+
 </nav>
+
+</header>
 
 <div class="container">
 
-<h2>Unsere Fahrzeuge und Anhänger</h2>
-<p>Klicke auf ein Fahrzeug für weitere Informationen.</p>
+<h2>Fahrzeuge</h2>
 
 <div class="vehicle-grid">
 
-<a href="lf8-6.html" class="vehicle-card">
-
+<div class="vehicle-card">
 <img src="bilder/lf8-6.jpg">
-
 <h3>LF 8/6</h3>
-
 <p>Löschgruppenfahrzeug</p>
+</div>
 
-</a>
-
-<a href="tlf24-50.html" class="vehicle-card">
-
+<div class="vehicle-card">
 <img src="bilder/tlf24-50.jpg">
-
 <h3>TLF 24/50</h3>
+</div>
 
-<p>Tanklöschfahrzeug</p>
-
-</a>
-
-<a href="rtb2.html" class="vehicle-card">
-
+<div class="vehicle-card">
 <img src="bilder/rtb2.jpg">
-
 <h3>RTB 2</h3>
+</div>
 
-<p>Rettungsboot</p>
-
-</a>
-
-<a href="nea50.html" class="vehicle-card">
-
+<div class="vehicle-card">
 <img src="bilder/nea50.jpg">
-
 <h3>NEA 50</h3>
+</div>
 
-<p>Netzersatzanlage 50 kVA</p>
-
-</a>
-
-<a href="tsa.html" class="vehicle-card">
-
+<div class="vehicle-card">
 <img src="bilder/tsa.jpg">
-
-<h3>JFW TSA</h3>
-
-<p>JFW Tragkraftspritzenanhänger</p>
-
-</a>
+<h3>JFW Tragkraftspritzenanhänger</h3>
+</div>
 
 </div>
 
 </div>
 
+
+</body>
+<script src="scripts.js"></script>
+</html>

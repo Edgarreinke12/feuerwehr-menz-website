@@ -1,67 +1,53 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-
 <meta charset="UTF-8">
-<title>Termine - Feuerwehr Menz</title>
-
+<title>Termine</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
 
 <header>
-<h1>📅 Termine</h1>
-</header>
 
-<nav>
+<div class="header-top">
+
+<h1>🚒 Feuerwehr Menz</h1>
+
+<button class="burger" onclick="toggleMenu()">☰</button>
+
+</div>
+
+<nav id="menu">
+
 <a href="index.html">Startseite</a>
 <a href="einsaetze.html">Einsätze</a>
 <a href="technik.html">Technik</a>
-<a href="verein.html">Verein</a>
 <a href="aktuelles.html">Aktuelles</a>
-<a href="termine.html">Termine</a>
 <a href="jugendfeuerwehr.html">Jugendfeuerwehr</a>
+<a href="einsatzarchiv.html">Einsatzarchiv</a>
+<a href="geschichte.html">Geschichte</a>
+<a href="wetter.html">Wetterwarnungen</a>
+<a href="galerie.html">Galerie</a>
+<a href="termine.html">Termine</a>
+<a href="buergerinfo.html">Bürgerinfo</a>
 <a href="kontakt.html">Kontakt</a>
+<a href="intern.html">Intern</a>
+<a href="downloads.html">Downloads</a>
+
 </nav>
+
+</header>
 
 <div class="container">
 
-<div class="card">
-
-<h2>März 2026</h2>
-
-<p>20.03.2026 – Übungsdienst</p>
-<p>27.03.2026 – Ausbildung Atemschutz</p>
-
-</div>
-
-<div class="card">
-
-<h2>April 2026</h2>
-
-<p>05.04.2026 – Osterfeuer</p>
-<p>12.04.2026 – Übungsdienst</p>
+<iframe
+src="https://calendar.google.com/calendar/embed"
+width="100%"
+height="500">
+</iframe>
 
 </div>
-
-<div class="card">
-
-<h2>Mai 2026</h2>
-
-<p>01.05.2026 – Maifest</p>
-<p>15.05.2026 – Ausbildung</p>
-
-</div>
-
-</div>
-
-<footer>
-
-<p>© Freiwillige Feuerwehr Menz</p>
-
-</footer>
 
 </body>
+<script src="scripts.js"></script>
 </html>

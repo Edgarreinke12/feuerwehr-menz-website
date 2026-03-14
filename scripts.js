@@ -324,3 +324,22 @@ grid-template-columns:repeat(2,1fr);
 }
 
 }
+
+#lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:5000;
+}
+
+#lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}

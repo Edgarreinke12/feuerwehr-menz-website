@@ -15,9 +15,6 @@ line-height:1.5;
 
 /* verhindert seitliches Scrollen */
 overflow-x:hidden;
-
-/* iPhone Bounce Fix */
-overscroll-behavior:none;
 }
 
 
@@ -68,14 +65,16 @@ align-items:center;
 /* -------------------- */
 
 .burger{
+position:fixed;
+top:12px;
+right:15px;
+
 font-size:28px;
 background:none;
 border:none;
 color:white;
 cursor:pointer;
 
-/* immer über dem Menü */
-position:relative;
 z-index:4000;
 }
 
@@ -103,15 +102,11 @@ z-index:3000;
 
 box-shadow:-5px 0 15px rgba(0,0,0,0.5);
 
-/* Scroll Fix */
+/* Scroll */
 overflow-y:auto;
 overflow-x:hidden;
 
-/* iPhone Scroll Fix */
 -webkit-overflow-scrolling:touch;
-
-/* verhindert Safari Bounce */
-overscroll-behavior:contain;
 }
 
 #menu.show{
@@ -124,8 +119,8 @@ color:white;
 text-decoration:none;
 border-bottom:1px solid #222;
 font-size:18px;
-transition:0.2s;
 display:block;
+transition:0.2s;
 }
 
 #menu a:hover{

@@ -1,46 +1,69 @@
-```html
 <!DOCTYPE html>
 <html lang="de">
 <head>
-
 <meta charset="UTF-8">
-<title>TLF24/50 - Feuerwehr Menz</title>
-
+<title>LF 8/6</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
 <header>
-<h1>🚒 TLF24/50</h1>
-</header>
 
-<nav>
+<div class="header-top">
+<h1>🚒 Feuerwehr Menz</h1>
+<button class="burger" onclick="toggleMenu()">☰</button>
+</div>
+
+<nav id="menu">
+
 <a href="index.html">Startseite</a>
 <a href="einsaetze.html">Einsätze</a>
 <a href="technik.html">Technik</a>
-<a href="verein.html">Verein</a>
 <a href="aktuelles.html">Aktuelles</a>
-<a href="termine.html">Termine</a>
 <a href="jugendfeuerwehr.html">Jugendfeuerwehr</a>
+<a href="einsatzarchiv.html">Einsatzarchiv</a>
+<a href="geschichte.html">Geschichte</a>
+<a href="wetter.html">Wetterwarnungen</a>
+<a href="galerie.html">Galerie</a>
+<a href="termine.html">Termine</a>
+<a href="buergerinfo.html">Bürgerinfo</a>
 <a href="kontakt.html">Kontakt</a>
+<a href="intern.html">Intern</a>
+<a href="downloads.html">Downloads</a>
+
 </nav>
+
+</header>
+  
+<header>
+<h1>🚒 TLF24/50</h1>
+</header>
 
 <div class="container">
 
-<div class="card">
+<img src="bilder/tlf24-50.jpg" class="fahrzeug-bild">
 
-<h2>Fahrzeuginformationen</h2>
+<h2>Technische Daten</h2>
 
-<p><b>Typ:</b> Tanklöschfahrzeug 24/50</p>
-<p><b>Baujahr:</b> 2002</p>
-<p><b>Besatzung:</b> 1/2</p>
+<ul>
+<li>Funkrufname: Florian Oberhavel 09/24/5</li>
+<li>Besatzung: 1/2</li>
+<li>Wassertank: 4800 Liter</li>
+<li>Baujahr: 2002</li>
+</ul>
+
+<h2>Geräteräume</h2>
+
+<img src="bilder/lf8-6-g1.jpg">
+<img src="bilder/lf8-6-g2.jpg">
+<img src="bilder/lf8-6-g2.jpg">
+<img src="bilder/lf8-6-g2.jpg">
+<img src="bilder/lf8-6-kabine.jpg">
 
 </div>
 
-</div>
+<script src="scripts.js"></script>
 
 </body>
 </html>
-```

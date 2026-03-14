@@ -46,8 +46,6 @@
 </header>
 
 
-<!-- HERO -->
-
 <div class="hero">
 <h2>365 Tage im Jahr für eure Sicherheit</h2>
 </div>
@@ -107,20 +105,20 @@ Gesamt
 
 <p>
 
-<a href="https://www.instagram.com/freiwillige_feuerwehr_menz/" target="_blank" rel="noopener">
+<a href="https://www.instagram.com/freiwillige_feuerwehr_menz/" target="_blank">
 Instagram
 </a>
 
 |
 
-<a href="https://facebook.com/freiwilligefeuerwehrmenzstechlin" target="_blank" rel="noopener">
+<a href="https://facebook.com/freiwilligefeuerwehrmenzstechlin" target="_blank">
 Facebook
 </a>
 
 </p>
 
 <p>
-Besucher: <span id="besucher">0</span>
+Besucher: <span id="besucher">Lade...</span>
 </p>
 
 </footer>
@@ -128,24 +126,5 @@ Besucher: <span id="besucher">0</span>
 
 <script src="scripts.js"></script>
 
-<script>
-
-// Besucheranzeige sicher laden
-
-window.addEventListener("load", function(){
-
-let visits = localStorage.getItem("visits") || 0;
-
-let box = document.getElementById("besucher");
-
-if(box){
-box.innerText = visits;
-}
-
-});
-
-</script>
-
 </body>
-
 </html>

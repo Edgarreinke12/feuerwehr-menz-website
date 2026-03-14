@@ -1,56 +1,77 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-
 <meta charset="UTF-8">
-<title>JFW TSA- Feuerwehr Menz</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TSA – Feuerwehr Menz</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
 <header>
-<h1>🚒 JFW TSA</h1>
-</header>
 
-<nav>
+<div class="header-top">
+<h1>🚒 Feuerwehr Menz</h1>
+<button class="burger" onclick="toggleMenu()">☰</button>
+</div>
+
+<nav id="menu">
+
 <a href="index.html">Startseite</a>
 <a href="einsaetze.html">Einsätze</a>
 <a href="technik.html">Technik</a>
-<a href="verein.html">Verein</a>
 <a href="aktuelles.html">Aktuelles</a>
-<a href="termine.html">Termine</a>
 <a href="jugendfeuerwehr.html">Jugendfeuerwehr</a>
+<a href="einsatzarchiv.html">Einsatzarchiv</a>
+<a href="geschichte.html">Geschichte</a>
+<a href="wetter.html">Wetterwarnungen</a>
+<a href="galerie.html">Galerie</a>
+<a href="termine.html">Termine</a>
+<a href="buergerinfo.html">Bürgerinfo</a>
 <a href="kontakt.html">Kontakt</a>
+<a href="intern.html">Intern</a>
+<a href="downloads.html">Downloads</a>
+
 </nav>
+
+</header>
+
 
 <div class="container">
 
+<h1>🚒 Tragkraftspritzenanhänger (TSA)</h1>
+
 <div class="card">
 
-<h2>Fahrzeuginformationen</h2>
+<h2>Technische Daten</h2>
 
 <p><b>Typ:</b> Tragkraftspritzenanhänger</p>
-<p><b>Baujahr:</b> 2002</p>
-<p><b>Besatzung:</b> 1/8</p>
-<p><b>Hersteller:</b> Wiking</p>
+<p><b>Verwendung:</b> Ausbildung Jugendfeuerwehr</p>
 
 </div>
+
 
 <div class="card">
 
-<h2>Ausrüstung</h2>
+<h2>Beladung</h2>
 
-<p>Tragkraftspritze</p>
-<p>Wassertank</p>
-<p>Atemschutzgeräte</p>
-<p>Schläuche</p>
+<ul>
+<li>Tragkraftspritze</li>
+<li>B-Schläuche</li>
+<li>C-Schläuche</li>
+<li>Strahlrohre</li>
+<li>Verteiler</li>
+<li>Saugschläuche</li>
+</ul>
 
 </div>
 
 </div>
+
+
+<script src="scripts.js"></script>
 
 </body>
 </html>

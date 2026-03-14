@@ -657,3 +657,34 @@ font-size:24px;
 }
 
 }
+
+/* -------------------- */
+/* ZURÜCK BUTTON */
+/* -------------------- */
+
+.back-container{
+max-width:1200px;
+margin:20px auto 0 auto;
+padding:0 25px;
+}
+
+.back-button{
+
+background:#c40000;
+color:white;
+
+border:none;
+border-radius:6px;
+
+padding:10px 18px;
+
+font-size:16px;
+cursor:pointer;
+
+transition:0.2s;
+
+}
+
+.back-button:hover{
+background:#a00000;
+}

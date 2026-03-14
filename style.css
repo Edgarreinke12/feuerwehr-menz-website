@@ -8,6 +8,18 @@ body{
 
 /* Burger Menü */
 
+.beladung-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+margin-top:15px;
+}
+
+.beladung-grid img{
+width:100%;
+border-radius:8px;
+}
+
 #menu{
 position:fixed;
 top:0;

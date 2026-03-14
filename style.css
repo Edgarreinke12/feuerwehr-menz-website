@@ -202,3 +202,11 @@ flex-direction:column;
 gap:15px;
 max-width:900px;
 }
+
+.fahrzeug-bild{
+width:100%;
+max-width:900px;
+border-radius:10px;
+display:block;
+margin:20px auto;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Einsätze 2024</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="main-header">
+
+<div class="header-overlay"></div>
+
+<div class="header-content">
+
+<h1>🚒 Feuerwehr Menz 🚒</h1>
+
+<button class="burger" onclick="toggleMenu()">☰</button>
+
+</div>
+
+<nav id="menu">
+
+<a href="index.html">Startseite</a>
+<a href="einsaetze.html">Einsätze</a>
+<a href="technik.html">Technik</a>
+<a href="aktuelles.html">Aktuelles</a>
+<a href="jugendfeuerwehr.html">Jugendfeuerwehr</a>
+<a href="einsatzarchiv.html">Einsatzarchiv</a>
+<a href="geschichte.html">Geschichte</a>
+<a href="wetter.html">Wetterwarnungen</a>
+<a href="galerie.html">Galerie</a>
+<a href="termine.html">Termine</a>
+<a href="buergerinfo.html">Bürgerinfo</a>
+<a href="kontakt.html">Kontakt</a>
+<a href="verein.html">Verein</a>
+<a href="intern.html" class="internLink">Intern</a>
+<a href="downloads.html">Downloads</a>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+<h1>Einsätze 2026</h1>
+
+<div class="card">
+
+<ul>
+
+<li>in arbeit/li>
+
+</ul>
+
+</div>
+
+</div>
+
+<script src="scripts.js"></script>
+
+</body>
+</html>

@@ -3,13 +3,18 @@
 // --------------------
 
 function toggleMenu(){
+
 let menu = document.getElementById("menu");
+
 if(menu){
 menu.classList.toggle("show");
 }
+
 }
 
+
 // Menü schließen wenn außerhalb geklickt wird
+
 document.addEventListener("click", function(event){
 
 let menu = document.getElementById("menu");
@@ -22,6 +27,23 @@ menu.classList.remove("show");
 }
 
 }
+
+});
+
+
+// Menü schließen wenn Menülink geklickt wird
+
+document.querySelectorAll("#menu a").forEach(function(link){
+
+link.addEventListener("click", function(){
+
+let menu = document.getElementById("menu");
+
+if(menu){
+menu.classList.remove("show");
+}
+
+});
 
 });
 
@@ -45,15 +67,15 @@ let input = document.getElementById("search");
 
 if(!input) return;
 
-let text = input.value.toLowerCase();
+let filter = input.value.toLowerCase();
 
 let einsaetze = document.querySelectorAll(".einsatz");
 
 einsaetze.forEach(function(e){
 
-let content = e.innerText.toLowerCase();
+let text = e.innerText.toLowerCase();
 
-if(content.includes(text)){
+if(text.includes(filter)){
 e.style.display = "flex";
 }else{
 e.style.display = "none";
@@ -68,9 +90,13 @@ e.style.display = "none";
 // BESUCHERZÄHLER
 // --------------------
 
-let visits = localStorage.getItem("visits") || 0;
+let visits = localStorage.getItem("visits");
 
-visits++;
+if(!visits){
+visits = 1;
+}else{
+visits = parseInt(visits) + 1;
+}
 
 localStorage.setItem("visits", visits);
 
@@ -88,7 +114,6 @@ let el = document.getElementById("countdown");
 if(!el) return;
 
 let now = new Date();
-
 let diff = eventDate - now;
 
 if(diff > 0){
@@ -96,6 +121,10 @@ if(diff > 0){
 let days = Math.floor(diff/(1000*60*60*24));
 
 el.innerText = days + " Tage";
+
+}else{
+
+el.innerText = "Event läuft";
 
 }
 
@@ -139,33 +168,41 @@ alert("Einsatz gespeichert");
 // WALDBRANDSTUFE
 // --------------------
 
+function ladeWaldbrand(){
+
 let stufe = 3;
 
 let beschreibung = "";
 let farbe = "";
 
-if(stufe==1){beschreibung="Sehr geringe Gefahr";farbe="green";}
-if(stufe==2){beschreibung="Geringe Gefahr";farbe="green";}
-if(stufe==3){beschreibung="Mittlere Gefahr";farbe="orange";}
-if(stufe==4){beschreibung="Hohe Gefahr";farbe="red";}
-if(stufe==5){beschreibung="Sehr hohe Gefahr";farbe="darkred";}
+if(stufe==1){beschreibung="Sehr geringe Waldbrandgefahr.";farbe="#2ecc71";}
+if(stufe==2){beschreibung="Geringe Waldbrandgefahr.";farbe="#8bc34a";}
+if(stufe==3){beschreibung="Mittlere Waldbrandgefahr.";farbe="#f1c40f";}
+if(stufe==4){beschreibung="Hohe Waldbrandgefahr.";farbe="#e67e22";}
+if(stufe==5){beschreibung="Sehr hohe Waldbrandgefahr.";farbe="#e74c3c";}
 
-let stufeText = document.getElementById("stufeText");
-let stufeBeschreibung = document.getElementById("stufeBeschreibung");
-let waldbrandBox = document.getElementById("waldbrandBox");
+let stufeText = document.getElementById("stufe");
+let beschreibungText = document.getElementById("beschreibung");
+let box = document.getElementById("waldbrandBox");
 
-if(stufeText && stufeBeschreibung && waldbrandBox){
+if(stufeText && beschreibungText && box){
 
 stufeText.innerText = "Stufe " + stufe;
-stufeBeschreibung.innerText = beschreibung;
-waldbrandBox.style.background = farbe;
+beschreibungText.innerText = beschreibung;
+box.style.background = farbe;
 
 }
+
+}
+
+window.addEventListener("load", ladeWaldbrand);
 
 
 // --------------------
 // WETTERDATEN (Beispiel)
 // --------------------
+
+function ladeWetter(){
 
 let temp = document.getElementById("temp");
 let wind = document.getElementById("wind");
@@ -179,9 +216,13 @@ regen.innerText = "0 mm";
 
 }
 
+}
+
+window.addEventListener("load", ladeWetter);
+
 
 // --------------------
-// GALERIE VOLLBILD
+// GALERIE LIGHTBOX
 // --------------------
 
 function openImage(img){
@@ -230,6 +271,7 @@ window.location.href = "intern.html";
 }else{
 
 let error = document.getElementById("error");
+
 if(error){
 error.innerText = "Login falsch";
 }

@@ -31,29 +31,14 @@ menu.classList.remove("show");
 });
 
 
-// Menü schließen wenn Menülink geklickt wird
-
-document.querySelectorAll("#menu a").forEach(function(link){
-
-link.addEventListener("click", function(){
-
-let menu = document.getElementById("menu");
-
-if(menu){
-menu.classList.remove("show");
-}
-
-});
-
-});
-
-
 // --------------------
 // DARK MODE
 // --------------------
 
 function toggleDark(){
+
 document.body.classList.toggle("dark");
+
 }
 
 
@@ -67,15 +52,15 @@ let input = document.getElementById("search");
 
 if(!input) return;
 
-let filter = input.value.toLowerCase();
+let text = input.value.toLowerCase();
 
 let einsaetze = document.querySelectorAll(".einsatz");
 
 einsaetze.forEach(function(e){
 
-let text = e.innerText.toLowerCase();
+let content = e.innerText.toLowerCase();
 
-if(text.includes(filter)){
+if(content.includes(text)){
 e.style.display = "flex";
 }else{
 e.style.display = "none";
@@ -90,13 +75,9 @@ e.style.display = "none";
 // BESUCHERZÄHLER
 // --------------------
 
-let visits = localStorage.getItem("visits");
+let visits = localStorage.getItem("visits") || 0;
 
-if(!visits){
-visits = 1;
-}else{
-visits = parseInt(visits) + 1;
-}
+visits++;
 
 localStorage.setItem("visits", visits);
 
@@ -114,6 +95,7 @@ let el = document.getElementById("countdown");
 if(!el) return;
 
 let now = new Date();
+
 let diff = eventDate - now;
 
 if(diff > 0){
@@ -121,10 +103,6 @@ if(diff > 0){
 let days = Math.floor(diff/(1000*60*60*24));
 
 el.innerText = days + " Tage";
-
-}else{
-
-el.innerText = "Event läuft";
 
 }
 
@@ -134,61 +112,52 @@ setInterval(countdown,1000);
 
 
 // --------------------
-// EINSATZ SPEICHERN
-// --------------------
-
-function addEinsatz(){
-
-let datum = document.getElementById("datum");
-let art = document.getElementById("art");
-let titel = document.getElementById("titel");
-let beschreibung = document.getElementById("beschreibung");
-
-if(!datum || !art || !titel || !beschreibung) return;
-
-let einsatz = {
-datum: datum.value,
-art: art.value,
-titel: titel.value,
-beschreibung: beschreibung.value
-};
-
-let einsaetze = JSON.parse(localStorage.getItem("einsaetze")) || [];
-
-einsaetze.push(einsatz);
-
-localStorage.setItem("einsaetze", JSON.stringify(einsaetze));
-
-alert("Einsatz gespeichert");
-
-}
-
-
-// --------------------
 // WALDBRANDSTUFE
 // --------------------
 
-function ladeWaldbrand(){
+// HIER STUFE ÄNDERN
 
-let stufe = 3;
+let stufe = 1;
+
+
+function ladeWaldbrand(){
 
 let beschreibung = "";
 let farbe = "";
 
-if(stufe==1){beschreibung="Sehr geringe Waldbrandgefahr.";farbe="#2ecc71";}
-if(stufe==2){beschreibung="Geringe Waldbrandgefahr.";farbe="#8bc34a";}
-if(stufe==3){beschreibung="Mittlere Waldbrandgefahr.";farbe="#f1c40f";}
-if(stufe==4){beschreibung="Hohe Waldbrandgefahr.";farbe="#e67e22";}
-if(stufe==5){beschreibung="Sehr hohe Waldbrandgefahr.";farbe="#e74c3c";}
+if(stufe==1){
+beschreibung="Sehr geringe Waldbrandgefahr.";
+farbe="#2ecc71";
+}
+
+if(stufe==2){
+beschreibung="Geringe Waldbrandgefahr.";
+farbe="#8bc34a";
+}
+
+if(stufe==3){
+beschreibung="Mittlere Waldbrandgefahr. Offenes Feuer vermeiden.";
+farbe="#f1c40f";
+}
+
+if(stufe==4){
+beschreibung="Hohe Waldbrandgefahr. Wälder möglichst meiden.";
+farbe="#e67e22";
+}
+
+if(stufe==5){
+beschreibung="Sehr hohe Waldbrandgefahr. Höchste Vorsicht.";
+farbe="#e74c3c";
+}
 
 let stufeText = document.getElementById("stufe");
-let beschreibungText = document.getElementById("beschreibung");
+let stufeBeschreibung = document.getElementById("beschreibung");
 let box = document.getElementById("waldbrandBox");
 
-if(stufeText && beschreibungText && box){
+if(stufeText && stufeBeschreibung && box){
 
 stufeText.innerText = "Stufe " + stufe;
-beschreibungText.innerText = beschreibung;
+stufeBeschreibung.innerText = beschreibung;
 box.style.background = farbe;
 
 }
@@ -199,30 +168,7 @@ window.addEventListener("load", ladeWaldbrand);
 
 
 // --------------------
-// WETTERDATEN (Beispiel)
-// --------------------
-
-function ladeWetter(){
-
-let temp = document.getElementById("temp");
-let wind = document.getElementById("wind");
-let regen = document.getElementById("regen");
-
-if(temp && wind && regen){
-
-temp.innerText = "18 °C";
-wind.innerText = "12 km/h";
-regen.innerText = "0 mm";
-
-}
-
-}
-
-window.addEventListener("load", ladeWetter);
-
-
-// --------------------
-// GALERIE LIGHTBOX
+// GALERIE VOLLBILD
 // --------------------
 
 function openImage(img){

@@ -197,3 +197,25 @@ lightbox.style.display="none";
 }
 
 }
+
+function login(){
+
+let email=document.getElementById("email").value;
+let password=document.getElementById("password").value;
+
+let correctEmail="mitglied@feuerwehr-menz.de";
+let correctPassword="feuerwehr123";
+
+if(email===correctEmail && password===correctPassword){
+
+localStorage.setItem("loggedIn","true");
+
+window.location.href="intern.html";
+
+}else{
+
+document.getElementById("error").innerText="Login falsch";
+
+}
+
+}

@@ -1,6 +1,6 @@
-// --------------------
+// ================================
 // BURGER MENÜ
-// --------------------
+// ================================
 
 function toggleMenu(){
 
@@ -12,27 +12,26 @@ menu.classList.toggle("show");
 
 }
 
-// Menü schließen wenn außerhalb geklickt wird
+// Menü schließen bei Klick außerhalb
 
 document.addEventListener("click", function(event){
 
 let menu = document.getElementById("menu");
 let burger = document.querySelector(".burger");
 
-if(menu && burger){
+if(!menu || !burger) return;
 
 if(!menu.contains(event.target) && !burger.contains(event.target)){
 menu.classList.remove("show");
 }
 
-}
-
 });
 
 
-// --------------------
+
+// ================================
 // LOGIN SYSTEM
-// --------------------
+// ================================
 
 let users = {
 
@@ -42,7 +41,6 @@ let users = {
 "steven":"feuerwehr4"
 
 };
-
 
 function login(){
 
@@ -74,9 +72,10 @@ error.innerText="Benutzername oder Passwort falsch";
 }
 
 
-// --------------------
+
+// ================================
 // LOGOUT
-// --------------------
+// ================================
 
 function logout(){
 
@@ -88,11 +87,12 @@ window.location.href="login.html";
 }
 
 
-// --------------------
-// INTERN MENÜ ANZEIGEN
-// --------------------
 
-window.addEventListener("load",function(){
+// ================================
+// INTERN MENÜ ANZEIGEN
+// ================================
+
+function checkInternMenu(){
 
 let internLinks = document.querySelectorAll(".internLink");
 
@@ -110,31 +110,39 @@ link.style.display="none";
 
 }
 
-});
+}
 
 
-// --------------------
+
+// ================================
 // BENUTZERNAME ANZEIGEN
-// --------------------
+// ================================
 
-window.addEventListener("load",function(){
+function showUser(){
 
 let user = localStorage.getItem("user");
 
 let box = document.getElementById("userName");
 
 if(box && user){
+
 box.innerText="👨‍🚒 Angemeldet: "+user;
+
 }
 
-});
+}
 
 
-// --------------------
+
+// ================================
 // GLOBALER BESUCHERZÄHLER
-// --------------------
+// ================================
 
 async function ladeBesucher(){
+
+let box = document.getElementById("besucher");
+
+if(!box) return;
 
 try{
 
@@ -142,39 +150,33 @@ let res = await fetch("https://api.countapi.xyz/hit/feuerwehr-menz/website");
 
 let data = await res.json();
 
-let box = document.getElementById("besucher");
-
-if(box){
 box.innerText = data.value;
-}
 
 }catch(e){
 
-let box = document.getElementById("besucher");
-
-if(box){
 box.innerText="0";
-}
 
 }
 
 }
 
-window.addEventListener("load", ladeBesucher);
 
 
-// --------------------
+// ================================
 // DARK MODE
-// --------------------
+// ================================
 
 function toggleDark(){
+
 document.body.classList.toggle("dark");
+
 }
 
 
-// --------------------
+
+// ================================
 // EINSATZ SUCHE
-// --------------------
+// ================================
 
 function searchEinsatz(){
 
@@ -201,9 +203,10 @@ e.style.display="none";
 }
 
 
-// --------------------
+
+// ================================
 // COUNTDOWN
-// --------------------
+// ================================
 
 let eventDate = new Date("April 20, 2026 18:00:00");
 
@@ -229,9 +232,10 @@ el.innerText = days + " Tage";
 setInterval(countdown,60000);
 
 
-// --------------------
+
+// ================================
 // WALDBRANDSTUFE
-// --------------------
+// ================================
 
 let stufe = 1;
 
@@ -260,24 +264,21 @@ box.style.background=farbe;
 
 }
 
-window.addEventListener("load",ladeWaldbrand);
 
 
-// --------------------
+// ================================
 // GALERIE LIGHTBOX
-// --------------------
+// ================================
 
 function openImage(img){
 
 let lightbox = document.getElementById("lightbox");
 let lightboxImg = document.getElementById("lightbox-img");
 
-if(lightbox && lightboxImg){
+if(!lightbox || !lightboxImg) return;
 
 lightbox.style.display="flex";
 lightboxImg.src = img.src;
-
-}
 
 }
 
@@ -290,3 +291,19 @@ lightbox.style.display="none";
 }
 
 }
+
+
+
+// ================================
+// INIT BEIM LADEN DER SEITE
+// ================================
+
+window.addEventListener("load",function(){
+
+checkInternMenu();
+showUser();
+ladeBesucher();
+ladeWaldbrand();
+countdown();
+
+});

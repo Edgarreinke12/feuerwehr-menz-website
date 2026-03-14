@@ -162,17 +162,25 @@ e.style.display="none";
 
 }
 
-
 // --------------------
-// BESUCHERZÄHLER
+// BESUCHERZÄHLER (nur einmal pro Gerät)
 // --------------------
 
-let visits = localStorage.getItem("visits") || 0;
+let visits = localStorage.getItem("visits");
+
+if(!visits){
+visits = 0;
+}
+
+let counted = localStorage.getItem("visitorCounted");
+
+if(!counted){
 
 visits++;
-
 localStorage.setItem("visits", visits);
+localStorage.setItem("visitorCounted", "true");
 
+}
 
 // --------------------
 // COUNTDOWN

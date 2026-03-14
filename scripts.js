@@ -12,8 +12,26 @@ menu.classList.toggle("show");
 
 }
 
+// Menü schließen bei Klick außerhalb
+
+document.addEventListener("click", function(event){
+
+let menu = document.getElementById("menu");
+let burger = document.querySelector(".burger");
+
+if(menu && burger){
+
+if(!menu.contains(event.target) && !burger.contains(event.target)){
+menu.classList.remove("show");
+}
+
+}
+
+});
+
+
 // --------------------
-// LOGIN SYSTEM MEHRERE BENUTZER
+// LOGIN SYSTEM (MEHRERE BENUTZER)
 // --------------------
 
 let users = {
@@ -40,25 +58,68 @@ window.location.href = "intern.html";
 
 }else{
 
-document.getElementById("error").innerText="Login falsch";
+let error = document.getElementById("error");
 
+if(error){
+error.innerText="Login falsch";
 }
 
 }
 
-// Menü schließen wenn außerhalb geklickt wird
-
-document.addEventListener("click", function(event){
-
-let menu = document.getElementById("menu");
-let burger = document.querySelector(".burger");
-
-if(menu && burger){
-
-if(!menu.contains(event.target) && !burger.contains(event.target)){
-menu.classList.remove("show");
 }
 
+
+// --------------------
+// LOGOUT
+// --------------------
+
+function logout(){
+
+localStorage.removeItem("loggedIn");
+localStorage.removeItem("user");
+
+window.location.href="login.html";
+
+}
+
+
+// --------------------
+// INTERN MENÜ ANZEIGEN
+// --------------------
+
+window.addEventListener("load",function(){
+
+let internLinks = document.querySelectorAll(".internLink");
+
+if(localStorage.getItem("loggedIn")==="true"){
+
+internLinks.forEach(link=>{
+link.style.display="block";
+});
+
+}else{
+
+internLinks.forEach(link=>{
+link.style.display="none";
+});
+
+}
+
+});
+
+
+// --------------------
+// BENUTZERNAME ANZEIGEN
+// --------------------
+
+window.addEventListener("load",function(){
+
+let user = localStorage.getItem("user");
+
+let box = document.getElementById("userName");
+
+if(box && user){
+box.innerText="👨‍🚒 Angemeldet: "+user;
 }
 
 });
@@ -69,9 +130,7 @@ menu.classList.remove("show");
 // --------------------
 
 function toggleDark(){
-
 document.body.classList.toggle("dark");
-
 }
 
 
@@ -94,9 +153,9 @@ einsaetze.forEach(function(e){
 let content = e.innerText.toLowerCase();
 
 if(content.includes(text)){
-e.style.display = "flex";
+e.style.display="flex";
 }else{
-e.style.display = "none";
+e.style.display="none";
 }
 
 });
@@ -148,60 +207,38 @@ setInterval(countdown,1000);
 // WALDBRANDSTUFE
 // --------------------
 
-// HIER STUFE ÄNDERN
-
 let stufe = 1;
-
 
 function ladeWaldbrand(){
 
-let beschreibung = "";
-let farbe = "";
+let beschreibung="";
+let farbe="";
 
-if(stufe==1){
-beschreibung="Sehr geringe Waldbrandgefahr.";
-farbe="#2ecc71";
-}
-
-if(stufe==2){
-beschreibung="Geringe Waldbrandgefahr.";
-farbe="#8bc34a";
-}
-
-if(stufe==3){
-beschreibung="Mittlere Waldbrandgefahr. Offenes Feuer vermeiden.";
-farbe="#f1c40f";
-}
-
-if(stufe==4){
-beschreibung="Hohe Waldbrandgefahr. Wälder möglichst meiden.";
-farbe="#e67e22";
-}
-
-if(stufe==5){
-beschreibung="Sehr hohe Waldbrandgefahr. Höchste Vorsicht.";
-farbe="#e74c3c";
-}
+if(stufe==1){beschreibung="Sehr geringe Waldbrandgefahr.";farbe="#2ecc71";}
+if(stufe==2){beschreibung="Geringe Waldbrandgefahr.";farbe="#8bc34a";}
+if(stufe==3){beschreibung="Mittlere Waldbrandgefahr. Offenes Feuer vermeiden.";farbe="#f1c40f";}
+if(stufe==4){beschreibung="Hohe Waldbrandgefahr. Wälder möglichst meiden.";farbe="#e67e22";}
+if(stufe==5){beschreibung="Sehr hohe Waldbrandgefahr. Höchste Vorsicht.";farbe="#e74c3c";}
 
 let stufeText = document.getElementById("stufe");
-let stufeBeschreibung = document.getElementById("beschreibung");
+let beschreibungText = document.getElementById("beschreibung");
 let box = document.getElementById("waldbrandBox");
 
-if(stufeText && stufeBeschreibung && box){
+if(stufeText && beschreibungText && box){
 
-stufeText.innerText = "Stufe " + stufe;
-stufeBeschreibung.innerText = beschreibung;
-box.style.background = farbe;
-
-}
+stufeText.innerText="Stufe "+stufe;
+beschreibungText.innerText=beschreibung;
+box.style.background=farbe;
 
 }
 
-window.addEventListener("load", ladeWaldbrand);
+}
+
+window.addEventListener("load",ladeWaldbrand);
 
 
 // --------------------
-// GALERIE VOLLBILD
+// GALERIE LIGHTBOX
 // --------------------
 
 function openImage(img){
@@ -211,7 +248,7 @@ let lightboxImg = document.getElementById("lightbox-img");
 
 if(lightbox && lightboxImg){
 
-lightbox.style.display = "flex";
+lightbox.style.display="flex";
 lightboxImg.src = img.src;
 
 }
@@ -223,51 +260,7 @@ function closeImage(){
 let lightbox = document.getElementById("lightbox");
 
 if(lightbox){
-lightbox.style.display = "none";
+lightbox.style.display="none";
 }
-
-}
-
-
-// --------------------
-// LOGIN SYSTEM
-// --------------------
-
-function login(){
-
-let email = document.getElementById("email").value;
-let password = document.getElementById("password").value;
-
-let correctEmail = "mitglied@feuerwehr-menz.de";
-let correctPassword = "feuerwehr123";
-
-if(email === correctEmail && password === correctPassword){
-
-localStorage.setItem("loggedIn","true");
-
-window.location.href = "intern.html";
-
-}else{
-
-let error = document.getElementById("error");
-
-if(error){
-error.innerText = "Login falsch";
-}
-
-}
-
-}
-
-
-// --------------------
-// LOGOUT
-// --------------------
-
-function logout(){
-
-localStorage.removeItem("loggedIn");
-
-window.location.href = "index.html";
 
 }

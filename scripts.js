@@ -1,345 +1,199 @@
-*{
-box-sizing:border-box;
-}
+// BURGER MENÜ
 
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#111;
-color:#fff;
+function toggleMenu(){
+let menu=document.getElementById("menu");
+menu.classList.toggle("show");
 }
 
 
-/* HEADER */
+// DARK MODE
 
-header{
-background:#c40000;
-color:white;
-padding:10px;
-}
-
-.header-top{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.header-box{
-display:flex;
-justify-content:space-between;
-align-items:center;
+function toggleDark(){
+document.body.classList.toggle("dark");
 }
 
 
-/* BURGER */
+// EINSATZ SUCHE
 
-.burger{
-position:absolute;
-top:10px;
-right:15px;
-font-size:28px;
-background:none;
-border:none;
-color:white;
-cursor:pointer;
+function searchEinsatz(){
+
+let input=document.getElementById("search").value.toLowerCase();
+let einsaetze=document.querySelectorAll(".einsatz");
+
+einsaetze.forEach(function(e){
+
+let text=e.innerText.toLowerCase();
+
+if(text.includes(input)){
+e.style.display="flex";
+}else{
+e.style.display="none";
+}
+
+});
+
 }
 
 
-/* SEITENMENÜ */
+// BESUCHERZÄHLER
 
-#menu{
-position:fixed;
-top:0;
-right:-280px;
-width:280px;
-height:100vh;
-background:#111;
-display:flex;
-flex-direction:column;
-transition:0.3s;
-z-index:1000;
-box-shadow:-5px 0 15px rgba(0,0,0,0.5);
-}
+let visits=localStorage.getItem("visits") || 0;
 
-#menu.show{
-right:0;
-}
+visits++;
 
-#menu a{
-padding:16px;
-color:white;
-text-decoration:none;
-border-bottom:1px solid #222;
-font-size:18px;
-}
+localStorage.setItem("visits",visits);
 
-#menu a:hover{
-background:#333;
-}
+console.log("Besucher:",visits);
 
 
-/* HERO STARTSEITE */
+// COUNTDOWN FÜR VERANSTALTUNG
 
-.hero{
-height:380px;
-background:url("bilder/feuerwehrhaus.jpg") center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-}
+let eventDate=new Date("April 20, 2026 18:00:00");
 
-.hero h2{
-background:rgba(0,0,0,.5);
-padding:12px 20px;
-border-radius:8px;
-}
+function countdown(){
 
+let now=new Date();
 
-/* CONTAINER */
+let diff=eventDate-now;
 
-.container{
-padding:25px;
-}
+if(diff>0){
 
+let days=Math.floor(diff/(1000*60*60*24));
 
-/* KARTEN */
+let el=document.getElementById("countdown");
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-margin-top:20px;
-}
+if(el){
 
-.card{
-background:#1e1e1e;
-padding:20px;
-border-radius:10px;
-text-align:center;
-text-decoration:none;
-color:#fff;
-transition:.25s;
-}
+el.innerText=days+" Tage";
 
-.card:hover{
-transform:scale(1.05);
-}
-
-
-/* EINSÄTZE */
-
-.einsatzliste{
-display:flex;
-flex-direction:column;
-gap:15px;
-max-width:900px;
-}
-
-.einsatz{
-display:flex;
-flex-direction:row;
-gap:15px;
-background:#1e1e1e;
-padding:15px;
-border-radius:10px;
-margin-bottom:15px;
-width:100%;
-}
-
-.einsatz-bild{
-width:120px;
-height:90px;
-object-fit:cover;
-border-radius:6px;
-}
-
-.einsatz-text{
-flex:1;
-}
-
-.brand{
-border-left:8px solid #ff2d2d;
-}
-
-.hilfe{
-border-left:8px solid #2d6bff;
-}
-
-.bma{
-border-left:8px solid #ffd000;
-}
-
-.sonst{
-border-left:8px solid #2dff6b;
-}
-
-
-/* FAHRZEUGE */
-
-.vehicle-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-}
-
-.vehicle-card{
-background:#1e1e1e;
-border-radius:10px;
-padding:15px;
-text-align:center;
-}
-
-.vehicle-card img{
-width:100%;
-height:180px;
-object-fit:cover;
-border-radius:6px;
-}
-
-
-/* FAHRZEUG SEITE */
-
-.fahrzeug-bild{
-width:100%;
-max-width:900px;
-border-radius:10px;
-display:block;
-margin:20px auto;
-}
-
-
-/* BELADUNG */
-
-.beladung-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:10px;
-margin-top:15px;
-}
-
-.beladung-grid img{
-width:100%;
-border-radius:8px;
-}
-
-
-/* GALERIE */
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:15px;
-margin-top:20px;
-}
-
-.gallery img{
-width:100%;
-height:220px;
-object-fit:cover;
-border-radius:10px;
-}
-
-
-/* STATISTIK */
-
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:20px;
-margin-top:20px;
-}
-
-.stats div{
-background:#1e1e1e;
-padding:20px;
-border-radius:8px;
-text-align:center;
-}
-
-
-/* WETTER */
-
-.wetter{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:20px;
-margin-top:20px;
-}
-
-.wetter div{
-background:#1e1e1e;
-padding:20px;
-border-radius:10px;
-text-align:center;
-}
-
-#waldbrandBox{
-width:100%;
-padding:40px;
-text-align:center;
-border-radius:10px;
-color:black;
-font-size:28px;
-font-weight:bold;
-margin-top:20px;
-}
-
-
-/* FOOTER */
-
-footer{
-background:#000;
-text-align:center;
-padding:15px;
-margin-top:30px;
-}
-
-
-/* DARKMODE */
-
-.dark{
-background:#eee;
-color:#111;
-}
-
-.dark .card,
-.dark .einsatz,
-.dark .vehicle-card{
-background:#ddd;
-color:#000;
-}
-
-
-/* MOBILE */
-
-@media(max-width:700px){
-
-.gallery{
-grid-template-columns:repeat(2,1fr);
-}
-
-.beladung-grid{
-grid-template-columns:repeat(2,1fr);
 }
 
 }
 
-#lightbox{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-display:none;
-justify-content:center;
-align-items:center;
-z-index:5000;
 }
 
-#lightbox img{
-max-width:90%;
-max-height:90%;
-border-radius:10px;
+setInterval(countdown,1000);
+
+
+
+
+// EINSATZ SPEICHERN (ADMIN)
+
+function addEinsatz(){
+
+let datum=document.getElementById("datum").value;
+let art=document.getElementById("art").value;
+let titel=document.getElementById("titel").value;
+let beschreibung=document.getElementById("beschreibung").value;
+
+let einsatz={
+datum,
+art,
+titel,
+beschreibung
+};
+
+let einsaetze=JSON.parse(localStorage.getItem("einsaetze")) || [];
+
+einsaetze.push(einsatz);
+
+localStorage.setItem("einsaetze",JSON.stringify(einsaetze));
+
+alert("Einsatz gespeichert");
+
+}
+
+
+
+
+// WALDBRANDSTUFE (MANUELL ÄNDERN)
+
+let stufe=3;
+
+let text="";
+let farbe="";
+
+if(stufe==1){
+text="Sehr geringe Gefahr";
+farbe="green";
+}
+
+if(stufe==2){
+text="Geringe Gefahr";
+farbe="green";
+}
+
+if(stufe==3){
+text="Mittlere Gefahr";
+farbe="orange";
+}
+
+if(stufe==4){
+text="Hohe Gefahr";
+farbe="red";
+}
+
+if(stufe==5){
+text="Sehr hohe Gefahr";
+farbe="darkred";
+}
+
+let stufeText=document.getElementById("stufeText");
+let stufeBeschreibung=document.getElementById("stufeBeschreibung");
+let waldbrandBox=document.getElementById("waldbrandBox");
+
+if(stufeText && stufeBeschreibung && waldbrandBox){
+
+stufeText.innerText="Stufe "+stufe;
+stufeBeschreibung.innerText=text;
+waldbrandBox.style.background=farbe;
+
+}
+
+
+
+
+// WETTERDATEN (BEISPIEL)
+
+let temp=document.getElementById("temp");
+let wind=document.getElementById("wind");
+let regen=document.getElementById("regen");
+
+if(temp && wind && regen){
+
+temp.innerText="18 °C";
+wind.innerText="12 km/h";
+regen.innerText="0 mm";
+
+}
+
+
+
+
+// GALERIE VOLLBILD
+
+function openImage(img){
+
+let lightbox=document.getElementById("lightbox");
+let lightboxImg=document.getElementById("lightbox-img");
+
+if(lightbox && lightboxImg){
+
+lightbox.style.display="flex";
+lightboxImg.src=img.src;
+
+}
+
+}
+
+function closeImage(){
+
+let lightbox=document.getElementById("lightbox");
+
+if(lightbox){
+
+lightbox.style.display="none";
+
+}
+
 }

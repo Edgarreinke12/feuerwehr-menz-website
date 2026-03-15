@@ -28,7 +28,6 @@ menu.classList.remove("show");
 });
 
 
-
 // ================================
 // LOGIN SYSTEM
 // ================================
@@ -72,7 +71,6 @@ error.innerText="Benutzername oder Passwort falsch";
 }
 
 
-
 // ================================
 // LOGOUT
 // ================================
@@ -87,7 +85,6 @@ window.location.href="login.html";
 }
 
 
-
 // ================================
 // INTERN MENÜ ANZEIGEN
 // ================================
@@ -98,20 +95,19 @@ let internLinks = document.querySelectorAll(".internLink");
 
 if(localStorage.getItem("loggedIn")==="true"){
 
-internLinks.forEach(link=>{
+internLinks.forEach(function(link){
 link.style.display="block";
 });
 
 }else{
 
-internLinks.forEach(link=>{
+internLinks.forEach(function(link){
 link.style.display="none";
 });
 
 }
 
 }
-
 
 
 // ================================
@@ -121,17 +117,13 @@ link.style.display="none";
 function showUser(){
 
 let user = localStorage.getItem("user");
-
 let box = document.getElementById("userName");
 
 if(box && user){
-
 box.innerText="👨‍🚒 Angemeldet: "+user;
-
 }
 
 }
-
 
 
 // ================================
@@ -147,7 +139,6 @@ if(!box) return;
 try{
 
 let res = await fetch("https://api.countapi.xyz/hit/feuerwehr-menz/website");
-
 let data = await res.json();
 
 box.innerText = data.value;
@@ -161,17 +152,13 @@ box.innerText="0";
 }
 
 
-
 // ================================
 // DARK MODE
 // ================================
 
 function toggleDark(){
-
 document.body.classList.toggle("dark");
-
 }
-
 
 
 // ================================
@@ -203,7 +190,6 @@ e.style.display="none";
 }
 
 
-
 // ================================
 // COUNTDOWN
 // ================================
@@ -221,16 +207,19 @@ let diff = eventDate - now;
 
 if(diff > 0){
 
-let days = Math.floor(diff/(1000*60*60*24));
+let days = Math.floor(diff/(10006060*24));
 
 el.innerText = days + " Tage";
+
+}else{
+
+el.innerText="Heute";
 
 }
 
 }
 
 setInterval(countdown,60000);
-
 
 
 // ================================
@@ -265,7 +254,6 @@ box.style.background=farbe;
 }
 
 
-
 // ================================
 // GALERIE LIGHTBOX
 // ================================
@@ -293,7 +281,6 @@ lightbox.style.display="none";
 }
 
 
-
 // ================================
 // INIT BEIM LADEN DER SEITE
 // ================================
@@ -306,4 +293,4 @@ ladeBesucher();
 ladeWaldbrand();
 countdown();
 
-});
+})

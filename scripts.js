@@ -207,7 +207,7 @@ let diff = eventDate - now;
 
 if(diff > 0){
 
-let days = Math.floor(diff/(10006060*24));
+let days = Math.floor(diff/(1000*60*60*24));
 
 el.innerText = days + " Tage";
 
@@ -220,7 +220,6 @@ el.innerText="Heute";
 }
 
 setInterval(countdown,60000);
-
 
 // ================================
 // WALDBRANDSTUFE

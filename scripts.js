@@ -37,7 +37,8 @@ let users = {
 "edgar":"feuerwehr1",
 "frank":"feuerwehr2",
 "rene":"feuerwehr3",
-"steven":"feuerwehr4"
+"steven":"feuerwehr4",
+"christian":"feuerwehr5"
 
 };
 

@@ -1,8 +1,8 @@
-/* ================================================= */
-/* GLOBAL */
-/* ================================================= */
+/* ================================================= /
+/ GLOBAL /
+/ ================================================= */
 
-*{
+{
 box-sizing:border-box;
 margin:0;
 padding:0;
@@ -14,25 +14,7 @@ font-family:Arial, Helvetica, sans-serif;
 color:#fff;
 line-height:1.5;
 
-/* DIENSTPLAN BILD */
-
-.dienstplan-bild{
-
-width:100%;
-
-max-width:900px;
-
-display:block;
-
-margin:auto;
-
-border-radius:10px;
-
-box-shadow:0 8px 25px rgba(0,0,0,0.6);
-
-}
-  
-/* Feuerwehr Hintergrund */
+/ Feuerwehr Hintergrund /
 
 background:
 linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
@@ -47,10 +29,26 @@ overflow-x:hidden;
 
 }
 
+/ DIENSTPLAN BILD /
 
-/* ================================================= */
-/* FEUER GLOW EFFEKT */
-/* ================================================= */
+.dienstplan-bild{
+
+width:100%;
+max-width:900px;
+
+display:block;
+margin:auto;
+
+border-radius:10px;
+
+box-shadow:0 8px 25px rgba(0,0,0,0.6);
+
+}
+
+
+/ ================================================= /
+/ FEUER GLOW EFFEKT /
+/ ================================================= /
 
 body::after{
 
@@ -77,9 +75,9 @@ z-index:0;
 }
 
 
-/* ================================================= */
-/* PROFESSIONAL HEADER */
-/* ================================================= */
+/ ================================================= /
+/ PROFESSIONAL HEADER /
+/ ================================================= /
 
 .main-header{
 
@@ -150,7 +148,7 @@ text-shadow:0 3px 10px rgba(0,0,0,0.9);
 }
 
 
-/* Feuer Glow */
+/ Feuer Glow /
 
 .main-header::after{
 
@@ -178,9 +176,9 @@ z-index:2;
 }
 
 
-/* ================================================= */
-/* BURGER BUTTON */
-/* ================================================= */
+/ ================================================= /
+/ BURGER BUTTON /
+/ ================================================= /
 
 .burger{
 
@@ -195,9 +193,9 @@ z-index:4000;
 }
 
 
-/* ================================================= */
-/* SIDE MENU */
-/* ================================================= */
+/ ================================================= /
+/ SIDE MENU /
+/ ================================================= /
 
 #menu{
 
@@ -253,9 +251,9 @@ background:#333;
 }
 
 
-/* ================================================= */
-/* HERO */
-/* ================================================= */
+/ ================================================= /
+/ HERO /
+/ ================================================= /
 
 .hero{
 
@@ -286,9 +284,9 @@ font-size:26px;
 }
 
 
-/* ================================================= */
-/* CONTAINER */
-/* ================================================= */
+/ ================================================= /
+/ CONTAINER /
+/ ================================================= /
 
 .container{
 
@@ -301,9 +299,9 @@ margin:auto;
 }
 
 
-/* ================================================= */
-/* CARDS */
-/* ================================================= */
+/ ================================================= /
+/ CARDS /
+/ ================================================= /
 
 .cards{
 
@@ -343,9 +341,9 @@ transform:translateY(-4px);
 }
 
 
-/* ================================================= */
-/* EINSÄTZE */
-/* ================================================= */
+/ ================================================= /
+/ EINSÄTZE /
+/ ================================================= /
 
 .einsatzliste{
 
@@ -395,9 +393,9 @@ flex:1;
 .sonst{border-left:8px solid #2dff6b;}
 
 
-/* ================================================= */
-/* FAHRZEUGE */
-/* ================================================= */
+/ ================================================= /
+/ FAHRZEUGE /
+/ ================================================= /
 
 .vehicle-grid{
 
@@ -442,9 +440,9 @@ border-radius:6px;
 }
 
 
-/* ================================================= */
-/* FAHRZEUG DETAIL */
-/* ================================================= */
+/ ================================================= /
+/ FAHRZEUG DETAIL /
+/ ================================================= /
 
 .fahrzeug-bild{
 
@@ -460,9 +458,9 @@ margin:20px auto;
 }
 
 
-/* ================================================= */
-/* BELADUNG */
-/* ================================================= */
+/ ================================================= /
+/ BELADUNG /
+/ ================================================= /
 
 .beladung-grid{
 
@@ -486,9 +484,9 @@ cursor:pointer;
 }
 
 
-/* ================================================= */
-/* GALERIE */
-/* ================================================= */
+/ ================================================= /
+/ GALERIE /
+/ ================================================= /
 
 .gallery{
 
@@ -515,9 +513,45 @@ cursor:pointer;
 }
 
 
-/* ================================================= */
-/* STATISTIK */
-/* ================================================= */
+/ ================================================= /
+/ LIGHTBOX /
+/ ================================================= /
+
+#lightbox{
+
+display:none;
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.9);
+
+align-items:center;
+justify-content:center;
+
+z-index:10000;
+
+}
+
+#lightbox-img{
+
+max-width:90%;
+max-height:90%;
+
+border-radius:10px;
+
+box-shadow:0 0 30px rgba(0,0,0,0.8);
+
+}
+
+
+/ ================================================= /
+/ STATISTIK /
+/ ================================================= /
 
 .stats{
 
@@ -545,9 +579,9 @@ box-shadow:0 5px 15px rgba(0,0,0,0.4);
 }
 
 
-/* ================================================= */
-/* WETTER */
-/* ================================================= */
+/ ================================================= /
+/ WETTER /
+/ ================================================= /
 
 .wetter{
 
@@ -593,9 +627,9 @@ margin-top:20px;
 }
 
 
-/* ================================================= */
-/* FOOTER */
-/* ================================================= */
+/ ================================================= /
+/ FOOTER /
+/ ================================================= /
 
 footer{
 
@@ -610,161 +644,9 @@ margin-top:40px;
 }
 
 
-/* ================================================= */
-/* SOCIAL MEDIA BUTTONS */
-/* ================================================= */
-
-.social-links{
-
-display:flex;
-justify-content:center;
-gap:20px;
-
-margin-top:10px;
-
-}
-
-.social-btn{
-
-padding:12px 24px;
-
-border-radius:10px;
-
-font-size:16px;
-font-weight:bold;
-
-text-decoration:none;
-color:white;
-
-transition:0.3s;
-
-box-shadow:0 4px 15px rgba(0,0,0,0.6);
-
-}
-
-/* Instagram */
-
-.instagram{
-background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
-}
-
-.instagram:hover{
-transform:translateY(-3px) scale(1.05);
-box-shadow:0 8px 20px rgba(0,0,0,0.7);
-}
-
-/* Facebook */
-
-.facebook{
-background:#1877f2;
-}
-
-.facebook:hover{
-transform:translateY(-3px) scale(1.05);
-box-shadow:0 8px 20px rgba(0,0,0,0.7);
-}
-
-
-/* ================================================= */
-/* DARK MODE */
-/* ================================================= */
-
-.dark{
-
-background:#eee;
-color:#111;
-
-}
-
-.dark .card,
-.dark .einsatz,
-.dark .vehicle-card{
-
-background:#ddd;
-color:#000;
-
-}
-
-
-/* ================================================= */
-/* MOBILE */
-/* ================================================= */
-
-@media(max-width:900px){
-
-.gallery{
-grid-template-columns:repeat(2,1fr);
-}
-
-.beladung-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-.einsatz{
-flex-direction:column;
-}
-
-.einsatz-bild{
-width:100%;
-height:180px;
-}
-
-}
-
-@media(max-width:500px){
-
-.gallery{
-grid-template-columns:1fr;
-}
-
-.cards{
-grid-template-columns:1fr;
-}
-
-.main-header{
-height:160px;
-}
-
-.header-content h1{
-font-size:24px;
-}
-
-}
-
-/* -------------------- */
-/* ZURÜCK BUTTON */
-/* -------------------- */
-
-.back-container{
-max-width:1200px;
-margin:20px auto 0 auto;
-padding:0 25px;
-}
-
-.back-button{
-
-background:#c40000;
-color:white;
-
-border:none;
-border-radius:6px;
-
-padding:10px 18px;
-
-font-size:16px;
-cursor:pointer;
-
-transition:0.2s;
-
-}
-
-.back-button:hover{
-background:#a00000;
-}
-
-/* -------------------- */
-/* FLOATING NAVIGATION */
-/* -------------------- */
+/ ================================================= /
+/ FLOATING NAVIGATION /
+/ ================================================= /
 
 .floating-nav{
 
@@ -814,56 +696,48 @@ background:#a00000;
 transform:scale(1.1);
 }
 
-/* -------------------- */
-/* SOCIAL MEDIA BUTTONS */
-/* -------------------- */
 
-.social-links{
+/ ================================================= /
+/ MOBILE /
+/ ================================================= */
 
-display:flex;
-justify-content:center;
-gap:20px;
+@media(max-width:900px){
 
-margin-top:20px;
+.gallery{
+grid-template-columns:repeat(2,1fr);
+}
+
+.beladung-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.einsatz{
+flex-direction:column;
+}
+
+.einsatz-bild{
+width:100%;
+height:180px;
+}
 
 }
 
-.social-btn{
+@media(max-width:500px){
 
-padding:12px 22px;
-
-border-radius:8px;
-
-font-size:16px;
-font-weight:bold;
-
-text-decoration:none;
-color:white;
-
-transition:0.3s;
-
-box-shadow:0 4px 10px rgba(0,0,0,0.5);
-
+.gallery{
+grid-template-columns:1fr;
 }
 
-/* Instagram */
-
-.instagram{
-background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
+.cards{
+grid-template-columns:1fr;
 }
 
-.instagram:hover{
-transform:scale(1.08);
-box-shadow:0 6px 18px rgba(0,0,0,0.7);
+.main-header{
+height:160px;
 }
 
-/* Facebook */
-
-.facebook{
-background:#1877f2;
+.header-content h1{
+font-size:24px;
 }
 
-.facebook:hover{
-transform:scale(1.08);
-box-shadow:0 6px 18px rgba(0,0,0,0.7);
 }

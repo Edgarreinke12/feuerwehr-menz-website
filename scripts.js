@@ -294,3 +294,27 @@ ladeWaldbrand();
 countdown();
 
 })
+
+// ================================
+// AKTIVEN MENÜPUNKT MARKIEREN
+// ================================
+
+function setActiveMenu(){
+
+let links = document.querySelectorAll("#menu a");
+
+let current = window.location.pathname.split("/").pop();
+
+links.forEach(link => {
+
+let href = link.getAttribute("href");
+
+if(href === current){
+link.classList.add("active");
+}
+
+});
+
+}
+
+window.addEventListener("load", setActiveMenu);

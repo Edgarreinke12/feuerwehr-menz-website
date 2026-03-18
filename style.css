@@ -1743,3 +1743,15 @@ h2,
 h3{
 color:white !important;
 }
+
+/* Aktiver Menüpunkt */
+
+#menu a.active{
+
+background:#c40000;
+
+font-weight:bold;
+
+border-left:4px solid #ff3c00;
+
+}

@@ -850,6 +850,17 @@ transform:scale(1.08);
 box-shadow:0 6px 18px rgba(0,0,0,0.7);
 }
 
+/* WhatsApp Button */
+
+.whatsapp{
+background:#25D366;
+}
+
+.whatsapp:hover{
+transform:scale(1.08);
+box-shadow:0 6px 18px rgba(0,0,0,0.7);
+}
+
 /* ================================================= */
 /* GALERIE LIGHTBOX */
 /* ================================================= */

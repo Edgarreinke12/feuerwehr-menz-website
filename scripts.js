@@ -226,7 +226,7 @@ setInterval(countdown,60000);
 // WALDBRANDSTUFE
 // ================================
 
-let stufe = 1;
+let stufe = 3;
 
 function ladeWaldbrand(){
 
